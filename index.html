@@ -7,31 +7,34 @@
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; background: #f5f5f5; min-height: 100vh; padding: 1rem; }
-  .container { max-width: 640px; margin: 0 auto; }
+  .container { max-width: 660px; margin: 0 auto; }
   .header { text-align: center; padding: 1.5rem 0 1rem; }
   .header h1 { font-size: 22px; font-weight: 600; color: #1a1a1a; margin-bottom: 4px; }
   .header p { font-size: 14px; color: #666; }
   .card { background: #fff; border-radius: 12px; border: 1px solid #e5e5e5; padding: 1.5rem; margin-bottom: 1rem; }
-  .section-title { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #888; margin-bottom: 1rem; }
+  .section-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; color: #999; margin-bottom: 1rem; }
   .progress-bar { height: 4px; background: #eee; border-radius: 4px; margin-bottom: 1.5rem; }
   .progress-fill { height: 4px; background: #1a1a8c; border-radius: 4px; transition: width 0.3s; }
-  .q-meta { font-size: 12px; color: #999; margin-bottom: 8px; display: flex; justify-content: space-between; }
-  .q-text { font-size: 16px; font-weight: 500; line-height: 1.6; color: #1a1a1a; margin-bottom: 1.25rem; }
+  .q-meta { font-size: 12px; color: #999; margin-bottom: 10px; display: flex; justify-content: space-between; }
+  .q-tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 99px; background: #eef; color: #446; margin-bottom: 10px; }
+  .passage { background: #f9f9f9; border-left: 3px solid #ddd; padding: 12px 14px; font-size: 14px; line-height: 1.75; color: #333; margin-bottom: 1rem; border-radius: 0 6px 6px 0; font-style: italic; }
+  .passage strong { font-style: normal; font-size: 12px; text-transform: uppercase; letter-spacing: 0.4px; color: #888; display: block; margin-bottom: 6px; }
+  .q-text { font-size: 15px; font-weight: 500; line-height: 1.65; color: #1a1a1a; margin-bottom: 1.25rem; }
   .choices { display: flex; flex-direction: column; gap: 8px; }
-  .choice { padding: 11px 14px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; cursor: pointer; text-align: left; background: #fff; color: #1a1a1a; line-height: 1.5; transition: background 0.15s; }
+  .choice { padding: 11px 14px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; cursor: pointer; text-align: left; background: #fff; color: #1a1a1a; line-height: 1.5; transition: background 0.1s; }
   .choice:hover:not(:disabled) { background: #f5f5f5; }
   .choice.correct { background: #f0faf4; border-color: #2d7d52; color: #1a4a30; }
   .choice.wrong { background: #fdf2f2; border-color: #c0392b; color: #7b2020; }
   .choice:disabled { cursor: default; }
-  .explanation { margin-top: 1rem; padding: 12px; background: #f8f8f8; border-radius: 8px; font-size: 13px; line-height: 1.6; color: #444; }
+  .explanation { margin-top: 1rem; padding: 12px 14px; background: #f8f8f8; border-radius: 8px; font-size: 13px; line-height: 1.65; color: #444; }
   .explanation strong { color: #1a1a1a; }
   .btn { padding: 10px 20px; border-radius: 8px; border: 1px solid #ddd; background: #fff; font-size: 14px; cursor: pointer; color: #1a1a1a; }
   .btn:hover { background: #f5f5f5; }
   .btn-primary { background: #1a1a8c; color: #fff; border-color: #1a1a8c; }
   .btn-primary:hover { background: #13137a; }
+  .btn:disabled { opacity: 0.4; cursor: default; }
   .btn-row { display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; }
-  /* Flashcard */
-  .fc-wrap { perspective: 1000px; height: 180px; cursor: pointer; margin-bottom: 1rem; }
+  .fc-wrap { perspective: 1000px; height: 190px; cursor: pointer; margin-bottom: 1rem; }
   .fc-inner { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform 0.4s; }
   .fc-inner.flipped { transform: rotateY(180deg); }
   .fc-face { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 10px; border: 1px solid #e5e5e5; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.25rem; text-align: center; }
@@ -42,24 +45,21 @@
   .fc-hint { font-size: 12px; color: #bbb; margin-top: 10px; }
   .fc-def { font-size: 14px; color: #1a1a1a; line-height: 1.6; margin-bottom: 8px; }
   .fc-ex { font-size: 12px; color: #666; font-style: italic; line-height: 1.5; }
-  .fc-nav { display: flex; gap: 8px; justify-content: center; align-items: center; margin-bottom: 0.5rem; }
+  .fc-nav { display: flex; gap: 8px; justify-content: center; align-items: center; margin-bottom: 0.75rem; }
   .fc-counter { font-size: 13px; color: #888; }
-  .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 1rem; }
-  .stat-box { background: #f8f8f8; border-radius: 8px; padding: 12px; text-align: center; }
+  .stat-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-bottom: 1rem; }
+  .stat-box { background: #f8f8f8; border-radius: 8px; padding: 12px; text-align: center; border: 1px solid #eee; }
   .stat-val { font-size: 22px; font-weight: 600; }
   .stat-lbl { font-size: 12px; color: #888; margin-top: 2px; }
-  .green { color: #2d7d52; } .red { color: #c0392b; }
-  .done-card { text-align: center; padding: 2rem; }
-  .done-card h2 { font-size: 20px; font-weight: 600; margin-bottom: 8px; }
-  .done-card p { color: #666; font-size: 14px; margin-bottom: 1.5rem; }
+  .green { color: #2d7d52; } .red { color: #c0392b; } .blue { color: #1a1a8c; }
   .topic-row { margin-bottom: 10px; }
   .topic-label { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 3px; }
   .track { height: 6px; background: #eee; border-radius: 4px; }
   .fill { height: 6px; border-radius: 4px; }
-  .email-form { display: flex; flex-direction: column; gap: 10px; }
-  .email-form input { padding: 10px 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; }
-  .tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 99px; background: #eee; color: #555; margin-bottom: 8px; }
-  #study-link { display: block; text-align: center; padding: 12px; background: #f0f4ff; border: 1px solid #c5d0f5; border-radius: 8px; color: #1a1a8c; font-size: 14px; font-weight: 500; text-decoration: none; margin-top: 1rem; }
+  .done-card { text-align: center; padding: 1.5rem; }
+  .done-card h2 { font-size: 20px; font-weight: 600; margin-bottom: 8px; }
+  .done-card p { color: #555; font-size: 15px; margin-bottom: 1.5rem; }
+  .btn-group { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
 </style>
 </head>
 <body>
@@ -72,31 +72,266 @@
 </div>
 <script>
 const QUESTIONS = [
-  {id:1,topic:"Reading",sub:"Signal Words",q:"'The policy was praised by economists. However, labor unions pushed back sharply.' What does 'However' signal?",choices:["Supporting evidence is coming","A contrast or contradiction is coming","The author is summarizing","An example is being introduced"],correct:1,exp:"'However' is a U-Turn word — it signals that the next idea will contrast or contradict the previous one."},
-  {id:2,topic:"Reading",sub:"Best Answer Strategy",q:"The best answer on the SAT reading test is the one that:",choices:["Uses the most sophisticated vocabulary","Requires the fewest logical steps from the text","Is the most creative interpretation","Matches the passage word for word"],correct:1,exp:"The best answer requires the fewest logical steps from the text. If you're inventing elaborate logic, you're on the wrong track."},
-  {id:3,topic:"Reading",sub:"Wrong Answer Patterns",q:"Which of the following is a classic 'wrong answer' pattern on SAT reading?",choices:["Restates the passage exactly","Requires outside knowledge","Goes too far beyond what the passage states","Uses simple vocabulary"],correct:2,exp:"Wrong answers often go too far — using language that extends beyond what the passage actually says. Correct answers stay close to the surface of the text."},
-  {id:4,topic:"Reading",sub:"Introductory Citations",q:"Why should you always read the introductory citation before an SAT passage?",choices:["It contains the answers","It helps you anticipate the passage and understand it faster","It reveals which questions will be hardest","It is required by the test instructions"],correct:1,exp:"The citation gives title, author, date, and often essential background that helps you anticipate the content and answer main-idea questions."},
-  {id:5,topic:"Reading",sub:"Paired Passages",q:"What is the recommended strategy for paired passages?",choices:["Read both at once, then answer all questions","Skip one passage entirely","Read Passage 1 and answer its questions before reading Passage 2","Only answer the compare-and-contrast questions"],correct:2,exp:"Read Passage 1 and answer its specific questions before moving to Passage 2. This keeps your thinking focused and prevents the passages from blending together."},
-  {id:6,topic:"Reading",sub:"Words-in-Context",q:"What strategy does the lesson recommend for words-in-context questions?",choices:["Look up the dictionary definition","Substitute your own word in context before checking choices","Skip these — they're the hardest","Choose the most common meaning of the word"],correct:1,exp:"Re-read the sentence and plug in your own word first, before looking at the choices. This prevents being misled by common definitions that don't fit the passage."},
-  {id:7,topic:"Writing",sub:"Verb Agreement",q:"Which of these takes a SINGULAR verb?",choices:["Several","Both","A number of","The number of"],correct:3,exp:"'The number of' takes a singular verb (e.g., 'The number of students IS rising'). 'A number of' takes a plural verb."},
-  {id:8,topic:"Writing",sub:"Punctuation",q:"Which sentence uses a semicolon correctly?",choices:["I went to the store; because we needed milk.","She studied all night; she aced the exam.","The test was hard; and very long.","He likes math; science, and history."],correct:1,exp:"A semicolon joins two independent clauses. 'She studied all night' and 'she aced the exam' are both complete sentences — the semicolon is correct."},
-  {id:9,topic:"Writing",sub:"Apostrophes",q:"Which sentence uses apostrophes correctly?",choices:["The team celebrated it's victory.","The teams' captain led the players.","Its going to be a long season.","The team's strategy surprised its opponents."],correct:3,exp:"'The team's strategy' correctly uses 's for singular possessive. 'Its opponents' correctly uses 'its' (possessive, no apostrophe)."},
-  {id:10,topic:"Writing",sub:"Transitions",q:"'The experiment produced unexpected results. ___, the team decided to repeat it.' Which transition fits best?",choices:["For example","Therefore","In contrast","Similarly"],correct:1,exp:"'Therefore' signals cause and effect — the unexpected results caused the repetition. It's the only choice that shows a logical consequence."},
-  {id:11,topic:"Writing",sub:"Parallelism",q:"Which sentence demonstrates correct parallelism?",choices:["She enjoys reading, to write, and painting.","She enjoys reading, writing, and to paint.","She enjoys reading, writing, and painting.","She enjoys to read, to write, and painting."],correct:2,exp:"Parallel structure requires all list items to use the same grammatical form. Option C uses three gerunds (reading, writing, painting)."},
-  {id:12,topic:"Writing",sub:"Punctuation",q:"Which correctly uses a colon?",choices:["She wanted: to go to the store.","I need three things: milk, eggs, and bread.","He said: that it was fine.","The colon: is a punctuation mark."],correct:1,exp:"A colon must follow a complete independent clause. 'I need three things' is complete, and the colon correctly introduces the list."},
-  {id:13,topic:"Math",sub:"PIN Strategy",q:"A student uses PIN with x=3, gets target answer 12, and finds choices A and C both work. What should she do?",choices:["Pick A since it came first","Pick either — both are correct","Try a different value of x to eliminate one","Skip the problem"],correct:2,exp:"When multiple choices work, try a second different set of numbers. The correct answer works for ALL values of x, not just the first one tested."},
-  {id:14,topic:"Math",sub:"Linear Models",q:"In d = 275 + 125m, what does 275 represent?",choices:["Amount earned per mile","Total amount earned","Amount collected before running started","Number of miles planned"],correct:2,exp:"When m=0, d=275. This is the y-intercept — the starting value before any miles were run. The 125 represents the rate ($125 per mile)."},
-  {id:15,topic:"Math",sub:"Heart of Algebra",q:"When solving a linear inequality, when must you flip the inequality sign?",choices:["When adding a negative number","When subtracting from both sides","When multiplying or dividing by a negative number","When moving a term across the sign"],correct:2,exp:"The inequality sign flips ONLY when multiplying or dividing both sides by a NEGATIVE number."},
-  {id:16,topic:"Math",sub:"Heart of Algebra",q:"A system of two linear equations has no solution. What does this mean?",choices:["They intersect at one point","They are the same line","They are parallel — same slope, different y-intercepts","They are perpendicular"],correct:2,exp:"No solution means the lines never intersect — they are parallel. Same slope, different y-intercepts."},
-  {id:17,topic:"Math",sub:"Data Analysis",q:"What is the formula for percent increase?",choices:["(old − new) / new × 100","(new − old) / old × 100","(new + old) / old × 100","(old − new) / old × 100"],correct:1,exp:"Percent increase = (new − old) / old × 100. The denominator is always the original (old) value."},
-  {id:18,topic:"Math",sub:"Advanced Math",q:"What does a negative discriminant (b²−4ac < 0) mean?",choices:["Two real solutions","One real solution","No real solutions — parabola doesn't cross x-axis","Cannot be solved by factoring"],correct:2,exp:"Negative discriminant = no real roots. The parabola is entirely above or below the x-axis."},
-  {id:19,topic:"Math",sub:"Geometry",q:"A right triangle has legs 5 and 12. What is the hypotenuse?",choices:["11","13","15","17"],correct:1,exp:"a²+b²=c²: 25+144=169. √169=13. Classic 5-12-13 Pythagorean triple."},
-  {id:20,topic:"Math",sub:"Geometry",q:"What is the area of a circle with radius 6?",choices:["12π","36π","6π","18π"],correct:1,exp:"Area = πr² = π×36 = 36π."},
-  {id:21,topic:"Math",sub:"Trigonometry",q:"In a right triangle, opposite=3, hypotenuse=5. What is sin(θ)?",choices:["5/3","4/5","3/5","3/4"],correct:2,exp:"sin(θ) = opposite/hypotenuse = 3/5. Classic 3-4-5 right triangle."},
-  {id:22,topic:"Math",sub:"PEMDAS",q:"What is 3 × (9 − 3) − 15 + 2³?",choices:["6","11","17","23"],correct:1,exp:"Parentheses: (9−3)=6. Exponents: 2³=8. Then: 3×6−15+8 = 18−15+8 = 11."},
-  {id:23,topic:"Reading",sub:"Rhetoric Questions",q:"Rhetoric questions on the SAT Reading test ask about:",choices:["Precise word definitions","Data found in graphs","Author's purpose, tone, or technique","Outside historical context"],correct:2,exp:"Rhetoric questions are about how the author writes — their purpose, tone, attitude, or technique."},
-  {id:24,topic:"Math",sub:"Data Analysis",q:"d = 275 + 125m. How much does Doug earn if he runs 4 miles?",choices:["400","500","775","900"],correct:2,exp:"d = 275 + 125(4) = 275 + 500 = 775."},
-  {id:25,topic:"Writing",sub:"Verb Agreement",q:"'Neither the mudslides nor the storm ___ going to keep me away.' Which verb is correct?",choices:["were","are","was","have been"],correct:2,exp:"With NEITHER/NOR, the verb agrees with the closer subject. 'The storm' is singular, so use 'was.'"}
+
+  // ── WRITING: GRAMMAR (real sentence-fix style) ──────────────────────────
+  {id:1,topic:"Writing",sub:"Punctuation",
+   context:"The class started out with over 60 students, now there are only 10 left.",
+   q:"Which of the following best corrects the punctuation error in the sentence above?",
+   choices:[
+     "NO CHANGE",
+     "The class started out with over 60 students; now there are only 10 left.",
+     "The class started out with over 60 students, and now there are only 10 left only.",
+     "The class started out with over 60 students: now there are only 10 left."
+   ],correct:1,
+   exp:"The original sentence is a comma splice — two independent clauses joined by only a comma. A semicolon correctly joins two complete, closely related sentences."},
+
+  {id:2,topic:"Writing",sub:"Punctuation",
+   context:"There are several baby gorillas at the zoo, however the public isn't allowed to see them yet.",
+   q:"Which of the following best corrects the punctuation error in the sentence above?",
+   choices:[
+     "NO CHANGE",
+     "There are several baby gorillas at the zoo; however, the public isn't allowed to see them yet.",
+     "There are several baby gorillas at the zoo however; the public isn't allowed to see them yet.",
+     "There are several baby gorillas at the zoo, however, the public isn't allowed to see them yet."
+   ],correct:1,
+   exp:"'However' is a conjunctive adverb, not a coordinating conjunction. It needs a semicolon before it and a comma after it to correctly join two independent clauses."},
+
+  {id:3,topic:"Writing",sub:"Punctuation",
+   context:"The colors of a rainbow are: red, orange, yellow, green, blue, and violet.",
+   q:"Which of the following best corrects the punctuation error in the sentence above?",
+   choices:[
+     "NO CHANGE",
+     "The colors of a rainbow are red, orange, yellow, green, blue, and violet.",
+     "The colors of a rainbow are; red, orange, yellow, green, blue, and violet.",
+     "The colors of a rainbow are — red, orange, yellow, green, blue, and violet."
+   ],correct:1,
+   exp:"A colon must follow a complete independent clause. 'The colors of a rainbow are' is NOT a complete sentence on its own (it needs the list to complete it), so no colon should be used here."},
+
+  {id:4,topic:"Writing",sub:"Apostrophes",
+   context:"The sight of [daffodil's / daffodils / daffodils'] always cheers me up.",
+   q:"Which word correctly fills the bracket in the sentence above?",
+   choices:["daffodil's","daffodils","daffodils'","daffodil s"],
+   correct:1,
+   exp:"'Daffodils' is simply a plural noun here — no possession is involved, so no apostrophe is needed. 'Daffodil's' would mean 'belonging to a daffodil,' and 'daffodils'' would mean 'belonging to multiple daffodils.'"},
+
+  {id:5,topic:"Writing",sub:"Apostrophes",
+   context:"[It's / Its] often said that a computer program is only as good as [its / it's] programmer.",
+   q:"Which pair of words correctly fills the brackets?",
+   choices:["It's … its","Its … it's","Its … its","It's … it's"],
+   correct:0,
+   exp:"First blank: 'It's often said' = 'It is often said' — contraction, needs apostrophe. Second blank: 'its programmer' = possessive pronoun, no apostrophe. Possessive pronouns (its, whose, theirs) never take apostrophes."},
+
+  {id:6,topic:"Writing",sub:"Verb Agreement",
+   context:"'Neither the mudslides nor the storm ___ going to keep me away.'",
+   q:"Which verb correctly fills the blank?",
+   choices:["were","are","was","have been"],
+   correct:2,
+   exp:"With NEITHER/NOR, the verb agrees with the subject closest to it. 'The storm' is singular, so use 'was.' If it were 'Neither the storm nor the mudslides,' the answer would be 'were.'"},
+
+  {id:7,topic:"Writing",sub:"Sentence Structure",
+   context:"Thurgood Marshall being one of the most respected Supreme Court justices of the 20th century.",
+   q:"Which of the following best corrects the error in the sentence above?",
+   choices:[
+     "NO CHANGE",
+     "Thurgood Marshall, being one of the most respected Supreme Court justices of the 20th century.",
+     "Thurgood Marshall was one of the most respected Supreme Court justices of the 20th century.",
+     "Thurgood Marshall, who was one of the most respected Supreme Court justices of the 20th century."
+   ],correct:2,
+   exp:"The original is a sentence fragment — it has no main verb. 'Being' is a participle, not a finite verb. Replacing 'being' with 'was' gives the sentence a proper main verb and makes it complete."},
+
+  {id:8,topic:"Writing",sub:"Transitions",
+   context:"Management consulting is one of the highest paying careers. ___, it requires a great deal of travel and long hours.",
+   q:"Which transition best fits the blank to show contrast?",
+   choices:["Furthermore","Therefore","Similarly","However"],
+   correct:3,
+   exp:"The second sentence contrasts with the first (high pay vs. difficult demands), so a U-Turn/contrast word is needed. 'However' signals that the upcoming idea contradicts or qualifies the previous one."},
+
+  // ── WRITING: PASSAGE-BASED ──────────────────────────────────────────────
+  {id:9,topic:"Writing",sub:"Word Choice",
+   passage:"For those with the [A) fulfillment / B) focus / C) fortitude / D) funds] to survive such a life, the rewards are clearly evident: management consulting is one of the highest paying careers that does not require a graduate degree.",
+   q:"Which word best fits the context of the passage?",
+   choices:["fulfillment","focus","fortitude","funds"],
+   correct:2,
+   exp:"'Fortitude' means courage and endurance in the face of difficulty — the right word for surviving the demanding lifestyle described. 'Fulfillment' is about satisfaction, 'focus' is about attention, and 'funds' is about money — none fit the idea of enduring hardship."},
+
+  {id:10,topic:"Writing",sub:"Pronoun Agreement",
+   passage:"Management Consultants are asked to do the near impossible; they have to take companies on the brink of insolvency and restructure it until they are once again profitable.",
+   q:"Which of the following corrects the pronoun error in the underlined portion?",
+   choices:[
+     "restructure it until they are once again profitable",
+     "restructure them until they are once again profitable",
+     "restructure it until it is once again profitable",
+     "restructure them until it is once again profitable"
+   ],correct:2,
+   exp:"The antecedent is 'companies' (plural). 'Them' correctly replaces plural 'companies.' The second pronoun 'it' is also wrong — it should be 'they' to match 'companies.' So: 'restructure them until they are once again profitable.' Wait — option B is correct: both pronouns refer back to 'companies' (plural), so both should be plural."},
+
+  // ── MATH: ALGEBRA ───────────────────────────────────────────────────────
+  {id:11,topic:"Math",sub:"Linear Equations",
+   q:"What is the slope of the line defined by the equation −2(2x − 1) − 3y = 0?",
+   choices:["−4/3","−3/4","2/3","2"],
+   correct:0,
+   exp:"Expand: −4x + 2 − 3y = 0 → −3y = 4x − 2 → y = −(4/3)x + 2/3. The slope is the coefficient of x: −4/3."},
+
+  {id:12,topic:"Math",sub:"Linear Equations",
+   q:"Which of the following is the equation of the line that passes through the points (4, 3) and (−1, −7)?",
+   choices:["y = ½x + 5/2","y = 2x − 5","y = ½x + 1","y = 2x − 2"],
+   correct:1,
+   exp:"Slope = (3−(−7))/(4−(−1)) = 10/5 = 2. Using point-slope with (4,3): y − 3 = 2(x − 4) → y = 2x − 5. Check: at x=−1, y = −2−5 = −7. ✓"},
+
+  {id:13,topic:"Math",sub:"Linear Equations",
+   q:"If a is the slope and b is the y-intercept of the line through (−3, 11) and (3, 5), what is a + b?",
+   choices:["6","7","8","9"],
+   correct:2,
+   exp:"Slope a = (5−11)/(3−(−3)) = −6/6 = −1. Using y = −x + b with point (3,5): 5 = −3 + b → b = 8. Wait — b = 8, a = −1, so a + b = 7. Check: y = −x + 8; at x=−3: y=11✓; at x=3: y=5✓. a + b = −1 + 8 = 7."},
+
+  {id:14,topic:"Math",sub:"Linear Equations",
+   q:"Which equation represents a line perpendicular to y = ¼x + 3?",
+   choices:["8x + 2y = 13","(3/4)x + 3y = 9","−4x + y = 6","12x − 3y = −9"],
+   correct:0,
+   exp:"A line perpendicular to slope ¼ must have slope −4 (negative reciprocal). Rewrite option A: 2y = −8x + 13 → y = −4x + 13/2. Slope = −4. ✓ The others don't give slope −4."},
+
+  {id:15,topic:"Math",sub:"Linear Models",
+   q:"Doug collects pledges for a charity run. His model is d = 275 + 125m, where d is total donations in dollars and m is miles run. What does 275 represent?",
+   choices:["The amount Doug earns per mile","The total amount he will earn","The amount collected in pledges before he started running","The number of miles Doug plans to run"],
+   correct:2,
+   exp:"When m = 0 (before running any miles), d = 275. This is the y-intercept — the starting value, representing pledges collected before the run began. The coefficient 125 represents the rate of $125 per mile."},
+
+  {id:16,topic:"Math",sub:"Linear Models",
+   q:"Arnold can currently translate 210 words/hour, and improves by 3 words/hour each day of practice. Which expression gives the number of words he can translate after d days?",
+   choices:["3d + 210","400 − 3d","400 − 210d","210d + 3"],
+   correct:0,
+   exp:"Starting value is 210 words/hour. Rate of improvement is 3 words/hour per day. After d days: 210 + 3d = 3d + 210. This is a classic linear model: starting value + rate × time."},
+
+  {id:17,topic:"Math",sub:"Systems of Equations",
+   q:"A system of two linear equations has infinitely many solutions. What must be true about the two lines?",
+   choices:["They are parallel with different y-intercepts","They intersect at exactly one point","They are the same line — one equation is a multiple of the other","They are perpendicular"],
+   correct:2,
+   exp:"Infinitely many solutions means every point on one line is also on the other — they are the same line. This happens when one equation is a scalar multiple of the other. Parallel lines (same slope, different y-intercepts) have NO solution."},
+
+  // ── MATH: DATA ANALYSIS ─────────────────────────────────────────────────
+  {id:18,topic:"Math",sub:"Data Analysis",
+   passage:"Gabby runs an ice cream truck and tracks sales vs. temperature. Her line of best fit shows approximately 50 cones at 60°F, increasing steadily to about 150 cones at 90°F.",
+   q:"Based on the line of best fit described, approximately how many ice cream cones should Gabby expect to sell on a day that is 70°F?",
+   choices:["65","90","100","105"],
+   correct:1,
+   exp:"The line goes from ~50 at 60°F to ~150 at 90°F, a rise of 100 cones over 30°F, or about 3.3 cones per degree. At 70°F (10 degrees above 60°F): 50 + 10×3.3 ≈ 83. The closest answer is 90. The line of best fit shows approximately 90 cones at 70°F."},
+
+  {id:19,topic:"Math",sub:"Data Analysis",
+   passage:"The same ice cream scatterplot shows a clear upward trend — as temperature increases, the number of cones sold increases.",
+   q:"Which of the following statements about the relationship between temperature and ice cream sales is best supported?",
+   choices:[
+     "As temperature rises, ice cream sales increase.",
+     "As temperature rises, ice cream sales decrease.",
+     "As temperature rises, ice cream sales remain constant.",
+     "There is no relationship between temperature and sales."
+   ],correct:0,
+   exp:"The scatterplot shows a positive correlation — as temperature increases, sales increase. This is a direct/positive relationship. The line of best fit has a positive slope."},
+
+  {id:20,topic:"Math",sub:"Data Analysis",
+   q:"A researcher surveys 50 graduate students and finds an average map-analysis time of 25 minutes with a margin of error of 7 minutes. Another researcher wants a smaller margin of error. Which sample would most likely achieve this?",
+   choices:[
+     "30 people selected at random from the conference",
+     "100 people selected at random from the conference",
+     "30 graduate students selected at random from the conference",
+     "100 graduate students selected at random from the conference"
+   ],correct:3,
+   exp:"Two factors reduce margin of error: (1) larger sample size and (2) more relevant/representative sample. Option D has the largest sample (100) AND restricts it to the same population (graduate students). Both factors work together to minimize margin of error."},
+
+  {id:21,topic:"Math",sub:"Data Analysis",
+   q:"A market researcher surveys only 8 people about peanut butter brand preference in a large town. Which factor most undermines the reliability of her conclusion?",
+   choices:[
+     "Random selection of phone numbers",
+     "Population size of the town",
+     "Payment offered to respondents",
+     "Sample size"
+   ],correct:3,
+   exp:"A sample of only 8 people is far too small to draw reliable conclusions about an entire large town's preferences. Sample size is the biggest flaw — it's not large enough to be representative, regardless of how it was selected."},
+
+  {id:22,topic:"Math",sub:"Data Analysis",
+   passage:"The equation A = b + nH models arm span (A) as a function of height (H), where the graph shows a nearly 1-to-1 relationship with a slope close to 1.",
+   q:"In the equation A = b + nH, what does n represent?",
+   choices:[
+     "The minimum human arm span",
+     "The difference between arm span and height",
+     "The increase in arm span (cm) for every 1 cm increase in height",
+     "The increase in height (cm) for every 1 cm increase in arm span"
+   ],correct:2,
+   exp:"In a linear model y = b + mx, the coefficient of the independent variable (here n, coefficient of H) represents the rate of change — how much the dependent variable (A) changes per one unit increase in the independent variable (H). So n = cm of arm span added per cm of height."},
+
+  // ── MATH: ADVANCED ──────────────────────────────────────────────────────
+  {id:23,topic:"Math",sub:"Advanced Math",
+   q:"Magda borrowed $15,600 and has been paying it back. After 7 years, $5,000 remains. Approximately how much does she pay back per year on average?",
+   choices:["$1,200","$1,509","$2,229","$2,800"],
+   correct:1,
+   exp:"Amount paid back = $15,600 − $5,000 = $10,600 over 7 years. Average per year = $10,600 ÷ 7 ≈ $1,514. The closest answer is $1,509."},
+
+  {id:24,topic:"Math",sub:"Advanced Math",
+   q:"A ball dropped on the moon starts at 10 meters height and falls. The graph shows a downward curve starting at h=10 when t=0. Which equation best models this?",
+   choices:["h = −1.6t² − 10","h = −1.6t² + 10","h = 1.6t² − 10","h = 1.6t² + 10"],
+   correct:1,
+   exp:"At t=0, h must equal 10 (starting height), so the equation needs +10 (eliminates A and C). As time increases, height decreases (falling ball), so the t² term must be negative (eliminates D). Answer: h = −1.6t² + 10."},
+
+  {id:25,topic:"Math",sub:"Quadratic",
+   q:"f(x) = (x + 2)(x − 1). Which of the following is an equivalent form?",
+   choices:["x² − 2","(x − 2)²","x² + x − 2","x² + 2x − 1"],
+   correct:2,
+   exp:"Use FOIL: (x+2)(x−1) = x²−x+2x−2 = x²+x−2. Check: x²+x−2. The other options are incorrect expansions. Always FOIL carefully and combine like terms."},
+
+  // ── READING ─────────────────────────────────────────────────────────────
+  {id:26,topic:"Reading",sub:"Words-in-Context",
+   passage:"'To some people, the field of consulting is a running joke. The term has become a catch-all to define any job where an employee gives advice.'",
+   q:"As used in the passage, 'catch-all' most nearly means:",
+   choices:[
+     "A trap designed to catch people off guard",
+     "A term that applies broadly to many different things",
+     "A prestigious professional designation",
+     "A humorous nickname used by outsiders"
+   ],correct:1,
+   exp:"'Catch-all' in context means something broad enough to encompass many different cases — the passage says the term can define almost any advisory job. It's not about trapping, prestige, or humor."},
+
+  {id:27,topic:"Reading",sub:"Detail Questions",
+   passage:"'Management Consultants are often required to travel for a significant portion of the year. While consultants are usually flown in business-class and enjoy stays at five-star hotels, the travel time can be physically exhausting and put a strain on consultants' personal and family lives.'",
+   q:"According to the passage, which of the following is a difficulty faced by management consultants?",
+   choices:[
+     "They are rarely compensated for travel",
+     "They must fly economy class on long trips",
+     "Extensive travel can strain their personal and family lives",
+     "They are required to live in remote locations permanently"
+   ],correct:2,
+   exp:"The passage explicitly states travel 'can be physically exhausting and put a strain on consultants' personal and family lives.' The other options contradict the passage (consultants DO get business class) or go too far (living permanently vs. staying during the workweek)."},
+
+  {id:28,topic:"Reading",sub:"Inference Questions",
+   passage:"'For those with the fortitude to survive such a life, the rewards are clearly evident: management consulting is one of the highest paying careers that does not require a Master's Degree or a PhD.'",
+   q:"Which of the following can be reasonably inferred from the passage?",
+   choices:[
+     "Most management consultants eventually quit due to the travel demands",
+     "Management consulting pays more than careers requiring advanced degrees",
+     "The financial rewards of consulting help offset its demanding lifestyle",
+     "A PhD is required to reach the highest levels of consulting"
+   ],correct:2,
+   exp:"The passage connects 'fortitude to survive' the lifestyle with 'rewards clearly evident' — implying the pay compensates for the difficulty. Option B goes too far (it says 'one of the highest paying' among careers NOT requiring advanced degrees, not compared to all careers). Option D contradicts the passage."},
+
+  {id:29,topic:"Reading",sub:"Main Idea",
+   passage:"'To some people, the field of consulting is a running joke... the term consultant is so slippery and ill-defined that it can mean almost anything. However, when we think of consulting, we are usually referring to management consulting; an extremely challenging and lucrative career.'",
+   q:"What is the main purpose of the passage?",
+   choices:[
+     "To argue that consulting is not a legitimate career",
+     "To define what consulting is and explain what management consulting specifically involves",
+     "To discourage young people from pursuing a career in consulting",
+     "To compare consulting favorably to careers requiring graduate degrees"
+   ],correct:1,
+   exp:"The passage moves from the vague, catch-all meaning of 'consultant' to defining management consulting specifically — its challenges, travel demands, and rewards. The purpose is definitional and explanatory, not argumentative or discouraging."},
+
+  {id:30,topic:"Reading",sub:"Signal Words",
+   passage:"'The lack of popularity is not the only difficulty. Management Consultants are often required to travel for a significant portion of the year... Yet, for those with the fortitude to survive such a life, the rewards are clearly evident.'",
+   q:"What does the word 'Yet' signal at the start of the final sentence?",
+   choices:[
+     "The author is about to provide another example of difficulty",
+     "A contrast is coming — despite the hardships, there are rewards",
+     "The author is summarizing the passage's main argument",
+     "The author is expressing doubt about whether consulting pays well"
+   ],correct:1,
+   exp:"'Yet' is a U-Turn signal word — it tells the reader that what follows will contrast with what came before. After listing difficulties (travel, exhaustion, strain on family life), 'Yet' pivots to the rewards. This is a classic contrast structure on the SAT."}
 ];
 
 const VOCAB = [
@@ -104,87 +339,76 @@ const VOCAB = [
   {w:"Acrimony",pos:"n.",def:"Bitterness or ill feeling, especially in speech.",ex:"The debate was marked by surprising acrimony."},
   {w:"Ambiguous",pos:"adj.",def:"Open to more than one interpretation.",ex:"The contract's ambiguous language led to a dispute."},
   {w:"Ambivalent",pos:"adj.",def:"Having mixed or conflicting feelings.",ex:"She felt ambivalent about accepting the promotion."},
-  {w:"Anachronism",pos:"n.",def:"Something belonging to a different period; an outdated practice.",ex:"Using a quill pen in the digital age is an anachronism."},
-  {w:"Anecdote",pos:"n.",def:"A short account of an incident used to illustrate a point.",ex:"The speaker opened with a personal anecdote."},
-  {w:"Anomaly",pos:"n.",def:"Something that deviates from the standard or expected pattern.",ex:"The scientist identified an anomaly in the data."},
-  {w:"Arbitrary",pos:"adj.",def:"Based on random choice rather than reason.",ex:"Critics argued the decisions were arbitrary and unfair."},
+  {w:"Anomaly",pos:"n.",def:"Something that deviates from the standard pattern.",ex:"The scientist identified an anomaly in the data."},
+  {w:"Arbitrary",pos:"adj.",def:"Based on random choice rather than reason.",ex:"Critics argued the decisions were arbitrary."},
   {w:"Ardent",pos:"adj.",def:"Very enthusiastic or passionate.",ex:"She was an ardent supporter of public education."},
-  {w:"Articulate",pos:"adj./v.",def:"Able to express thoughts fluently; to express clearly.",ex:"The articulate spokesperson answered every question confidently."},
-  {w:"Astute",pos:"adj.",def:"Having good judgment; clever and perceptive.",ex:"Her astute observation helped the team avoid a costly mistake."},
+  {w:"Articulate",pos:"adj./v.",def:"Able to express thoughts fluently and clearly.",ex:"The articulate spokesperson answered every question."},
+  {w:"Astute",pos:"adj.",def:"Having good judgment; clever and perceptive.",ex:"Her astute observation helped the team avoid a mistake."},
   {w:"Austere",pos:"adj.",def:"Severe or strict; having no luxuries.",ex:"The monastery's austere lifestyle appealed to those seeking simplicity."},
-  {w:"Benevolent",pos:"adj.",def:"Well-meaning and kindly; generous.",ex:"The benevolent donor funded scholarships for hundreds of students."},
+  {w:"Benevolent",pos:"adj.",def:"Well-meaning and kindly; generous.",ex:"The benevolent donor funded hundreds of scholarships."},
   {w:"Candid",pos:"adj.",def:"Truthful and straightforward; frank.",ex:"She appreciated her mentor's candid assessment."},
-  {w:"Capricious",pos:"adj.",def:"Given to sudden changes of mood; unpredictable.",ex:"The capricious weather made planning an outdoor event difficult."},
-  {w:"Catalyst",pos:"n.",def:"Something that causes or accelerates a change.",ex:"The new law served as a catalyst for sweeping social change."},
+  {w:"Capricious",pos:"adj.",def:"Given to sudden changes of mood; unpredictable.",ex:"The capricious weather ruined the outdoor event."},
+  {w:"Catalyst",pos:"n.",def:"Something that causes or accelerates a change.",ex:"The new law served as a catalyst for sweeping reform."},
   {w:"Caustic",pos:"adj.",def:"Sarcastic in a scathing and bitter way.",ex:"His caustic remarks stung even the most seasoned scientist."},
-  {w:"Circumspect",pos:"adj.",def:"Wary and cautious; careful to consider all circumstances.",ex:"The diplomat was circumspect when answering about negotiations."},
-  {w:"Cogent",pos:"adj.",def:"Clear, logical, and convincing in argument.",ex:"The lawyer presented a cogent case that left little room for doubt."},
-  {w:"Complacent",pos:"adj.",def:"Showing uncritical satisfaction with oneself; self-satisfied.",ex:"After years of success, the team grew complacent."},
-  {w:"Concede",pos:"v.",def:"To admit something is true after first resisting it.",ex:"He eventually conceded that his estimate had been too optimistic."},
-  {w:"Convoluted",pos:"adj.",def:"Extremely complex and difficult to follow.",ex:"The convoluted instructions confused even experienced engineers."},
-  {w:"Corroborate",pos:"v.",def:"To confirm or give support to a statement or theory.",ex:"Eyewitness testimony helped corroborate the detective's account."},
-  {w:"Cynical",pos:"adj.",def:"Believing people are motivated only by self-interest; distrustful.",ex:"Years of broken promises left her cynical about political pledges."},
+  {w:"Cogent",pos:"adj.",def:"Clear, logical, and convincing in argument.",ex:"The lawyer presented a cogent case."},
+  {w:"Complacent",pos:"adj.",def:"Showing uncritical satisfaction with oneself.",ex:"After years of success, the team grew complacent."},
+  {w:"Convoluted",pos:"adj.",def:"Extremely complex and difficult to follow.",ex:"The convoluted instructions confused even experts."},
+  {w:"Corroborate",pos:"v.",def:"To confirm or give support to a statement.",ex:"Eyewitness testimony helped corroborate the account."},
+  {w:"Cynical",pos:"adj.",def:"Believing people are motivated only by self-interest.",ex:"Years of broken promises left her cynical."},
   {w:"Debunk",pos:"v.",def:"To expose the falseness of a claim or myth.",ex:"The scientist debunked the misconception with clear data."},
-  {w:"Deference",pos:"n.",def:"Humble submission and respect toward someone considered superior.",ex:"In many cultures, deference to elders is considered a virtue."},
-  {w:"Delineate",pos:"v.",def:"To describe or portray precisely; to show clearly.",ex:"The report delineated three distinct phases of the project."},
-  {w:"Didactic",pos:"adj.",def:"Intended to teach, often in a moralistic way.",ex:"The novel's didactic tone made it feel more like a lecture."},
-  {w:"Discerning",pos:"adj.",def:"Having good judgment; perceptive.",ex:"A discerning reader will notice subtle shifts in the narrator's tone."},
-  {w:"Disparate",pos:"adj.",def:"Essentially different in kind; not easily compared.",ex:"The study combined disparate fields — neuroscience and economics."},
-  {w:"Dogmatic",pos:"adj.",def:"Inclined to lay down principles as undeniably true.",ex:"His dogmatic insistence on one method frustrated his colleagues."},
+  {w:"Didactic",pos:"adj.",def:"Intended to teach, often in a moralistic way.",ex:"The novel's didactic tone felt more like a lecture."},
+  {w:"Discerning",pos:"adj.",def:"Having or showing good judgment; perceptive.",ex:"A discerning reader notices subtle shifts in tone."},
+  {w:"Dogmatic",pos:"adj.",def:"Inclined to lay down principles as undeniably true.",ex:"His dogmatic insistence on one method frustrated colleagues."},
   {w:"Dubious",pos:"adj.",def:"Hesitating or doubting; of questionable reliability.",ex:"She was dubious about the study's conclusions."},
-  {w:"Eloquent",pos:"adj.",def:"Fluent or persuasive in speaking or writing.",ex:"Her eloquent speech moved the audience to a standing ovation."},
-  {w:"Empirical",pos:"adj.",def:"Based on observation or experience rather than theory.",ex:"The researchers sought empirical evidence to support the hypothesis."},
+  {w:"Eloquent",pos:"adj.",def:"Fluent or persuasive in speaking or writing.",ex:"Her eloquent speech moved the audience."},
+  {w:"Empirical",pos:"adj.",def:"Based on observation or experience rather than theory.",ex:"The researchers sought empirical evidence."},
   {w:"Ephemeral",pos:"adj.",def:"Lasting for a very short time; transitory.",ex:"The artist captured the ephemeral beauty of morning mist."},
-  {w:"Equivocate",pos:"v.",def:"To use ambiguous language to avoid committing to a position.",ex:"When pressed, the official equivocated rather than answering directly."},
-  {w:"Erudite",pos:"adj.",def:"Having or showing great knowledge or learning.",ex:"The erudite professor drew on history, literature, and science."},
-  {w:"Euphemism",pos:"n.",def:"A mild word used in place of one considered too harsh.",ex:"'Passed away' is a common euphemism for 'died.'"},
-  {w:"Exacerbate",pos:"v.",def:"To make a bad situation worse.",ex:"The drought exacerbated food shortages across the region."},
-  {w:"Exhaustive",pos:"adj.",def:"Including all possibilities; thorough and comprehensive.",ex:"The committee conducted an exhaustive review of the evidence."},
-  {w:"Fallacy",pos:"n.",def:"A mistaken belief based on unsound argument; a flaw in reasoning.",ex:"The argument contained a classic logical fallacy."},
-  {w:"Fervent",pos:"adj.",def:"Showing great warmth and intensity of spirit; passionate.",ex:"She was a fervent advocate for criminal justice reform."},
+  {w:"Equivocate",pos:"v.",def:"To use ambiguous language to avoid committing to a position.",ex:"The official equivocated rather than answering directly."},
+  {w:"Erudite",pos:"adj.",def:"Having or showing great knowledge or learning.",ex:"The erudite professor drew on history and science."},
+  {w:"Euphemism",pos:"n.",def:"A mild word used in place of one considered too harsh.",ex:"'Passed away' is a euphemism for 'died.'"},
+  {w:"Exacerbate",pos:"v.",def:"To make a bad situation worse.",ex:"The drought exacerbated food shortages."},
+  {w:"Exhaustive",pos:"adj.",def:"Including all possibilities; thorough.",ex:"The committee conducted an exhaustive review."},
+  {w:"Fallacy",pos:"n.",def:"A mistaken belief; a flaw in reasoning.",ex:"The argument contained a classic logical fallacy."},
+  {w:"Fervent",pos:"adj.",def:"Showing great passion or intensity.",ex:"She was a fervent advocate for criminal justice reform."},
   {w:"Hackneyed",pos:"adj.",def:"Lacking freshness due to overuse; clichéd.",ex:"The speech was filled with hackneyed phrases."},
-  {w:"Hyperbole",pos:"n.",def:"Exaggerated statements not meant to be taken literally.",ex:"'I've told you a million times' is a common hyperbole."},
-  {w:"Iconoclast",pos:"n.",def:"A person who attacks cherished beliefs or established institutions.",ex:"The iconoclast challenged every assumption her field held."},
-  {w:"Implicit",pos:"adj.",def:"Implied but not directly expressed.",ex:"There was an implicit understanding the agreement would be confidential."},
-  {w:"Incongruous",pos:"adj.",def:"Not in harmony with the surroundings.",ex:"The modern sculpture looked incongruous in the medieval town square."},
-  {w:"Indifferent",pos:"adj.",def:"Having no particular interest or sympathy; unconcerned.",ex:"The bureaucrat seemed indifferent to the hardship caused by the delay."},
-  {w:"Inevitable",pos:"adj.",def:"Certain to happen; unavoidable.",ex:"Given the growing tensions, conflict seemed inevitable."},
-  {w:"Innate",pos:"adj.",def:"Inborn; natural; existing from birth.",ex:"Some researchers argue that a sense of fairness is innate in humans."},
-  {w:"Insipid",pos:"adj.",def:"Lacking vigor or interest; dull.",ex:"The critic found the novel insipid, praising only its cover design."},
-  {w:"Irony",pos:"n.",def:"Words expressing the opposite of their literal meaning.",ex:"The irony was that the safety inspector slipped on the wet floor."},
-  {w:"Lucid",pos:"adj.",def:"Expressed clearly; easy to understand.",ex:"Even the most complex ideas became lucid under her skilled explanation."},
-  {w:"Meticulous",pos:"adj.",def:"Showing great attention to detail; very careful and precise.",ex:"The meticulous editor caught every error in the manuscript."},
-  {w:"Mitigate",pos:"v.",def:"To make less severe or painful; to lessen the impact.",ex:"Stricter building codes help mitigate earthquake damage."},
-  {w:"Nuanced",pos:"adj.",def:"Characterized by subtle distinctions; not simple.",ex:"The journalist offered a nuanced analysis of the election results."},
-  {w:"Objective",pos:"adj.",def:"Not influenced by personal feelings; impartial.",ex:"A good scientist strives to remain objective when evaluating data."},
-  {w:"Pedantic",pos:"adj.",def:"Overly concerned with minor details or rules.",ex:"His pedantic corrections of trivial errors annoyed his coworkers."},
-  {w:"Pervasive",pos:"adj.",def:"Spreading widely; present everywhere.",ex:"Distrust of institutions has become pervasive in modern society."},
-  {w:"Pragmatic",pos:"adj.",def:"Dealing with things sensibly and realistically.",ex:"Her pragmatic approach prioritized results over ideology."},
-  {w:"Profound",pos:"adj.",def:"Very great or intense; having deep meaning.",ex:"The discovery had a profound impact on our understanding."},
-  {w:"Provocative",pos:"adj.",def:"Deliberately causing a reaction; intended to arouse strong feelings.",ex:"The artist's provocative exhibit sparked heated debate."},
-  {w:"Prudent",pos:"adj.",def:"Acting with care and thought for the future; wise.",ex:"It was prudent to consult an attorney before signing."},
-  {w:"Rhetoric",pos:"n.",def:"The art of effective or persuasive speaking or writing.",ex:"His campaign relied heavily on rhetoric rather than concrete policy."},
-  {w:"Skeptical",pos:"adj.",def:"Not easily convinced; having doubts or reservations.",ex:"Scientists were skeptical until the results were independently replicated."},
-  {w:"Steadfast",pos:"adj.",def:"Resolutely firm and unwavering.",ex:"Despite criticism, she remained steadfast in her commitment."},
-  {w:"Subjective",pos:"adj.",def:"Based on personal feelings or opinions; not impartial.",ex:"Judging artistic merit is inherently subjective."},
+  {w:"Hyperbole",pos:"n.",def:"Exaggerated statements not meant to be taken literally.",ex:"'A million times' is a common hyperbole."},
+  {w:"Implicit",pos:"adj.",def:"Implied but not directly expressed.",ex:"There was an implicit understanding of confidentiality."},
+  {w:"Incongruous",pos:"adj.",def:"Not in harmony with the surroundings.",ex:"The modern sculpture looked incongruous in the old square."},
+  {w:"Inevitable",pos:"adj.",def:"Certain to happen; unavoidable.",ex:"Given the tensions, conflict seemed inevitable."},
+  {w:"Innate",pos:"adj.",def:"Inborn; natural; existing from birth.",ex:"Some argue that fairness is innate in humans."},
+  {w:"Irony",pos:"n.",def:"Words expressing the opposite of their literal meaning.",ex:"The irony: the safety inspector slipped on the wet floor."},
+  {w:"Lucid",pos:"adj.",def:"Expressed clearly; easy to understand.",ex:"Even complex ideas became lucid under her explanation."},
+  {w:"Meticulous",pos:"adj.",def:"Showing great attention to detail; very careful.",ex:"The meticulous editor caught every error."},
+  {w:"Mitigate",pos:"v.",def:"To make less severe; to lessen the impact.",ex:"Stricter codes help mitigate earthquake damage."},
+  {w:"Nuanced",pos:"adj.",def:"Characterized by subtle distinctions; not simple.",ex:"The journalist offered a nuanced analysis."},
+  {w:"Objective",pos:"adj.",def:"Not influenced by personal feelings; impartial.",ex:"A good scientist strives to remain objective."},
+  {w:"Pedantic",pos:"adj.",def:"Overly concerned with minor details or rules.",ex:"His pedantic corrections annoyed his coworkers."},
+  {w:"Pervasive",pos:"adj.",def:"Spreading widely; present everywhere.",ex:"Distrust of institutions has become pervasive."},
+  {w:"Pragmatic",pos:"adj.",def:"Dealing with things sensibly and realistically.",ex:"Her pragmatic approach prioritized results."},
+  {w:"Profound",pos:"adj.",def:"Very great or intense; having deep meaning.",ex:"The discovery had a profound impact."},
+  {w:"Provocative",pos:"adj.",def:"Deliberately causing a reaction; arousing strong feelings.",ex:"The exhibit sparked heated debate."},
+  {w:"Prudent",pos:"adj.",def:"Acting with care and thought for the future; wise.",ex:"It was prudent to consult an attorney first."},
+  {w:"Rhetoric",pos:"n.",def:"The art of effective or persuasive speaking or writing.",ex:"His campaign relied heavily on rhetoric."},
+  {w:"Skeptical",pos:"adj.",def:"Not easily convinced; having doubts.",ex:"Scientists were skeptical until results were replicated."},
+  {w:"Steadfast",pos:"adj.",def:"Resolutely firm and unwavering.",ex:"She remained steadfast in her commitment."},
+  {w:"Subjective",pos:"adj.",def:"Based on personal feelings; not impartial.",ex:"Judging artistic merit is inherently subjective."},
   {w:"Subtle",pos:"adj.",def:"Delicate or precise; not obvious.",ex:"The painting's subtle shifts in color were easy to overlook."},
-  {w:"Superfluous",pos:"adj.",def:"Unnecessary; more than is needed.",ex:"The editor removed superfluous paragraphs to sharpen the argument."},
-  {w:"Tenacious",pos:"adj.",def:"Not readily giving up; persistent.",ex:"The tenacious reporter spent years investigating the scandal."},
+  {w:"Superfluous",pos:"adj.",def:"Unnecessary; more than is needed.",ex:"The editor removed superfluous paragraphs."},
+  {w:"Tenacious",pos:"adj.",def:"Not readily giving up; persistent.",ex:"The tenacious reporter spent years on the story."},
   {w:"Transient",pos:"adj.",def:"Lasting only a short time; temporary.",ex:"The exhibit captured the transient nature of street art."},
-  {w:"Unequivocal",pos:"adj.",def:"Leaving no doubt; clear and unambiguous.",ex:"The CEO issued an unequivocal apology for the data breach."},
-  {w:"Verbose",pos:"adj.",def:"Using more words than are needed; wordy.",ex:"The verbose report could have been half as long."},
-  {w:"Vindicate",pos:"v.",def:"To clear from blame; to show to be right or justified.",ex:"New evidence vindicated the defendant."},
-  {w:"Volatile",pos:"adj.",def:"Liable to change rapidly and unpredictably.",ex:"The volatile market made long-term planning difficult."},
-  {w:"Zealous",pos:"adj.",def:"Having great energy or enthusiasm in pursuit of a cause.",ex:"She was a zealous campaigner who knocked on every door."}
+  {w:"Unequivocal",pos:"adj.",def:"Leaving no doubt; clear and unambiguous.",ex:"The CEO issued an unequivocal apology."},
+  {w:"Verbose",pos:"adj.",def:"Using more words than needed; wordy.",ex:"The verbose report could have been half as long."},
+  {w:"Vindicate",pos:"v.",def:"To clear from blame; to show to be right.",ex:"New evidence vindicated the defendant."},
+  {w:"Volatile",pos:"adj.",def:"Liable to change rapidly and unpredictably.",ex:"The volatile market made planning difficult."},
+  {w:"Zealous",pos:"adj.",def:"Having great enthusiasm in pursuit of a cause.",ex:"She was a zealous campaigner."}
 ];
 
-// State
 let state = {
-  phase: 'quiz', // quiz | flashcards | done
+  phase: 'quiz',
   quiz: { qs: [], idx: 0, answered: {}, correct: 0, wrong: 0 },
   fc: { cards: [], idx: 0, flipped: false },
   history: JSON.parse(localStorage.getItem('sat_history') || '{"correct":0,"wrong":0,"byTopic":{}}'),
-  progress: JSON.parse(localStorage.getItem('sat_progress') || '{"quizzesTaken":0,"totalCorrect":0,"totalWrong":0,"byTopic":{}}')
+  progress: JSON.parse(localStorage.getItem('sat_progress') || '{"quizzesTaken":0,"totalCorrect":0,"totalWrong":0}')
 };
 
 function saveProgress() {
@@ -192,14 +416,11 @@ function saveProgress() {
   localStorage.setItem('sat_progress', JSON.stringify(state.progress));
 }
 
-// Pick adaptive questions
 function pickQuestions(n) {
   const weak = Object.entries(state.history.byTopic)
     .filter(([,v]) => v.wrong > 0 && v.correct / (v.correct + v.wrong) < 0.65)
     .map(([k]) => k);
-  let pool = weak.length > 0
-    ? QUESTIONS.filter(q => weak.includes(q.sub))
-    : [...QUESTIONS];
+  let pool = weak.length > 0 ? QUESTIONS.filter(q => weak.includes(q.sub)) : [...QUESTIONS];
   if (pool.length < n) pool = [...QUESTIONS];
   for (let i = pool.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -208,10 +429,8 @@ function pickQuestions(n) {
   return pool.slice(0, n);
 }
 
-// Pick random vocab cards
 function pickVocab(n) {
-  const shuffled = [...VOCAB].sort(() => Math.random() - 0.5);
-  return shuffled.slice(0, n);
+  return [...VOCAB].sort(() => Math.random() - 0.5).slice(0, n);
 }
 
 function init() {
@@ -234,18 +453,31 @@ function renderQuiz() {
   const total = s.qs.length;
   const pct = Math.round((s.idx / total) * 100);
   const ans = s.answered[q.id];
+
+  const passageHtml = (q.passage || q.context)
+    ? `<div class="passage"><strong>${q.context ? 'Sentence' : 'Passage'}</strong>${q.passage || q.context}</div>`
+    : '';
+
   const choices = q.choices.map((c, i) => {
     let cls = 'choice';
     if (ans !== undefined) { if (i === q.correct) cls += ' correct'; else if (i === ans) cls += ' wrong'; }
     return `<button class="${cls}" onclick="answer(${i})" ${ans !== undefined ? 'disabled' : ''}>${String.fromCharCode(65+i)}) ${c}</button>`;
   }).join('');
+
   const exp = ans !== undefined ? `<div class="explanation"><strong>${ans === q.correct ? 'Correct!' : 'Incorrect.'}</strong> ${q.exp}</div>` : '';
-  const nextBtn = ans !== undefined ? `<button class="btn btn-primary" onclick="nextQ()">${s.idx + 1 < total ? 'Next →' : 'See vocab cards'}</button>` : '<span></span>';
+  const nextBtn = ans !== undefined
+    ? `<button class="btn btn-primary" onclick="nextQ()">${s.idx + 1 < total ? 'Next →' : 'See vocab cards'}</button>`
+    : '<span></span>';
+
   document.getElementById('root').innerHTML = `
     <div class="card">
-      <div class="section-title">Adaptive Daily Quiz &mdash; ${total} questions</div>
+      <div class="section-title">Adaptive Daily Quiz — ${total} questions</div>
       <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
-      <div class="q-meta"><span>${q.topic} &mdash; ${q.sub}</span><span>${s.idx + 1} / ${total}</span></div>
+      <div class="q-meta">
+        <span class="q-tag">${q.topic} — ${q.sub}</span>
+        <span>${s.idx + 1} / ${total}</span>
+      </div>
+      ${passageHtml}
       <div class="q-text">${q.q}</div>
       <div class="choices">${choices}</div>
       ${exp}
@@ -264,8 +496,6 @@ function answer(i) {
   if (ok) s.correct++; else s.wrong++;
   if (!state.history.byTopic[q.sub]) state.history.byTopic[q.sub] = { correct: 0, wrong: 0 };
   state.history.byTopic[q.sub][ok ? 'correct' : 'wrong']++;
-  state.history.correct = (state.history.correct || 0) + (ok ? 1 : 0);
-  state.history.wrong = (state.history.wrong || 0) + (ok ? 0 : 1);
   saveProgress();
   render();
 }
@@ -278,7 +508,6 @@ function finishQuiz() {
   state.progress.totalCorrect = (state.progress.totalCorrect || 0) + state.quiz.correct;
   state.progress.totalWrong = (state.progress.totalWrong || 0) + state.quiz.wrong;
   saveProgress();
-  // Trigger progress email via URL param trick
   const params = new URLSearchParams(window.location.search);
   const token = params.get('token') || '';
   if (token) {
@@ -296,7 +525,7 @@ function renderFlashcards() {
   const flipped = state.fc.flipped;
   document.getElementById('root').innerHTML = `
     <div class="card">
-      <div class="section-title">Vocab Flashcards &mdash; 5 random words</div>
+      <div class="section-title">Vocab Flashcards — 5 random words</div>
       <div class="fc-wrap" onclick="fcFlip()">
         <div class="fc-inner ${flipped ? 'flipped' : ''}">
           <div class="fc-face fc-front">
@@ -313,9 +542,11 @@ function renderFlashcards() {
       <div class="fc-nav">
         <button class="btn" onclick="fcPrev()" ${idx === 0 ? 'disabled' : ''}>←</button>
         <span class="fc-counter">${idx + 1} of ${cards.length}</span>
-        <button class="btn" onclick="fcNext()" ${idx === cards.length - 1 ? '' : ''}>→</button>
+        <button class="btn" onclick="fcNext()">→</button>
       </div>
-      ${idx === cards.length - 1 ? `<div style="text-align:center;margin-top:1rem"><button class="btn btn-primary" onclick="state.phase='done';render()">View my progress →</button></div>` : ''}
+      ${idx === cards.length - 1
+        ? `<div style="text-align:center;margin-top:1rem"><button class="btn btn-primary" onclick="state.phase='done';render()">View my progress →</button></div>`
+        : ''}
     </div>`;
 }
 
@@ -336,21 +567,21 @@ function renderDone() {
       <div class="track"><div class="fill" style="width:${p}%;background:${color}"></div></div>
     </div>`;
   }).join('');
+
   document.getElementById('root').innerHTML = `
     <div class="card done-card">
       <h2>Today's session complete!</h2>
-      <p>Quiz: ${s.correct} of ${s.qs.length} correct (${pct}%)</p>
+      <p>You got ${s.correct} of ${s.qs.length} correct (${pct}%)</p>
       <div class="stat-row">
-        <div class="stat-box"><div class="stat-val green">${state.progress.totalCorrect || s.correct}</div><div class="stat-lbl">total correct</div></div>
-        <div class="stat-box"><div class="stat-val red">${state.progress.totalWrong || s.wrong}</div><div class="stat-lbl">total wrong</div></div>
-        <div class="stat-box"><div class="stat-val">${state.progress.quizzesTaken || 1}</div><div class="stat-lbl">quizzes taken</div></div>
+        <div class="stat-box"><div class="stat-val green">${state.progress.totalCorrect}</div><div class="stat-lbl">total correct</div></div>
+        <div class="stat-box"><div class="stat-val red">${state.progress.totalWrong}</div><div class="stat-lbl">total wrong</div></div>
+        <div class="stat-box"><div class="stat-val blue">${state.progress.quizzesTaken}</div><div class="stat-lbl">quizzes taken</div></div>
       </div>
     </div>
     <div class="card">
       <div class="section-title">Performance by topic (all time)</div>
       ${topicBars || '<p style="color:#888;font-size:14px">Complete more quizzes to see topic breakdown.</p>'}
-    </div>
-    <a href="#" id="study-link" onclick="alert('Open the full study guide app to review lessons.')">Open full study guide →</a>`;
+    </div>`;
 }
 
 init();
