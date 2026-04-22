@@ -811,6 +811,343 @@ const ALL_QUESTIONS = [
    q:"The best answer to a detail question about this sentence would:",
    choices:["Add information about which cities have the most consultants","Restate or summarize exactly what the passage says","Interpret this as meaning consultants prefer city life","Conclude that consulting firms should relocate to rural areas"],
    correct:1,exp:"The best SAT answer restates or summarizes what the passage explicitly says, requiring the fewest logical steps from the text. Adding information, making interpretations, or drawing conclusions that go beyond the passage are all wrong answer patterns."},
+
+  // ── WRITING: MODIFIERS (8 questions) ────────────────────────────────────
+  {id:131,topic:"Writing",sub:"Modifiers",
+   context:"The trousers were laid out [flatly / flat] upon the table.",
+   q:"Which modifier correctly fills the bracket?",
+   choices:["flatly","flat","flatten","flattening"],
+   correct:1,exp:"'Flat' is an adjective describing the state of the trousers. 'Flatly' is an adverb that modifies verbs. Linking-type verbs and positional descriptions use adjectives, not adverbs."},
+
+  {id:132,topic:"Writing",sub:"Modifiers",
+   context:"Castor oil tastes [awful / awfully].",
+   q:"Which modifier correctly fills the bracket?",
+   choices:["awful","awfully","more awful","awfully bad"],
+   correct:0,exp:"'Tastes' is a linking verb (like is, feels, seems). Linking verbs are followed by adjectives, not adverbs. 'Castor oil tastes awful' — the adjective 'awful' describes the oil."},
+
+  {id:133,topic:"Writing",sub:"Modifiers",
+   context:"Of the three candidates for the job, she is the [more / most] experienced.",
+   q:"Which comparative form correctly fills the bracket?",
+   choices:["more","most","much more","much most"],
+   correct:1,exp:"When comparing THREE or more things, use the superlative ('most'). When comparing only TWO things, use the comparative ('more'). Three candidates → 'most experienced.'"},
+
+  {id:134,topic:"Writing",sub:"Modifiers",
+   context:"They are both great hitters, but Omar is the [better / best] fielder of the two.",
+   q:"Which comparative form correctly fills the bracket?",
+   choices:["better","best","more better","most best"],
+   correct:0,exp:"When comparing exactly TWO things, use the comparative ('better'). 'Of the two' confirms only two players are being compared. Three or more would require 'best.'"},
+
+  {id:135,topic:"Writing",sub:"Modifiers",
+   context:"There are [fewer / less] people registered as independents than in previous elections.",
+   q:"Which modifier correctly fills the bracket?",
+   choices:["fewer","less","lesser","little"],
+   correct:0,exp:"'Fewer' is used with countable nouns (people, apples, ideas). 'Less' is used with uncountable nouns (water, time, money). 'People' is countable → 'fewer.'"},
+
+  {id:136,topic:"Writing",sub:"Modifiers",
+   context:"Running quickly in the winter air, my nose got cold.",
+   q:"Which best corrects the misplaced modifier?",
+   choices:["NO CHANGE","Running quickly in the winter air, the cold made my nose numb.","As I ran quickly in the winter air, my nose got cold.","My nose got cold, running quickly in the winter air."],
+   correct:2,exp:"'Running quickly in the winter air' must describe the grammatical subject. The original incorrectly implies the nose was running. 'As I ran quickly in the winter air, my nose got cold' correctly places 'I' as the runner."},
+
+  {id:137,topic:"Writing",sub:"Modifiers",
+   context:"Having finished my dinner, the waitress offered to bring out the dessert tray.",
+   q:"Which best corrects the misplaced modifier?",
+   choices:["NO CHANGE","After I finished my dinner, the waitress offered to bring out the dessert tray.","Having finished my dinner, the dessert tray was offered by the waitress.","The waitress, having finished my dinner, offered to bring out the dessert tray."],
+   correct:1,exp:"'Having finished my dinner' must modify whoever ate dinner — the diner, not the waitress. Option B correctly identifies who did what."},
+
+  {id:138,topic:"Writing",sub:"Modifiers",
+   context:"Two cars were reported stolen by the county sheriff yesterday.",
+   q:"Which best corrects the ambiguous modifier?",
+   choices:["NO CHANGE","Two cars were reported stolen yesterday by the county sheriff.","The county sheriff reported two cars stolen yesterday.","Yesterday, two stolen cars were reported by the county sheriff."],
+   correct:2,exp:"The original is ambiguous — 'by the county sheriff' could mean the sheriff reported the theft OR stole the cars. Option C clearly states the sheriff is the one reporting."},
+
+  // ── WRITING: PARALLELISM (6 questions) ──────────────────────────────────
+  {id:139,topic:"Writing",sub:"Parallelism",
+   context:"I like to read books, watch movies, and to play video games.",
+   q:"Which best corrects the parallelism error?",
+   choices:["NO CHANGE","I like to read books, to watch movies, and to play video games.","I like reading books, watching movies, and to play video games.","I like to read books, watching movies, and playing video games."],
+   correct:1,exp:"All three items must use the same form. 'To read, to watch, to play' — all infinitives ✓. Option A inconsistently omits 'to' before 'watch.'"},
+
+  {id:140,topic:"Writing",sub:"Parallelism",
+   context:"Unlike the original statue, plastic was used to make the copy.",
+   q:"Which best corrects the comparison error?",
+   choices:["NO CHANGE","Unlike the original statue, the copy was made out of plastic.","Unlike the original statue, the making of the copy used plastic.","Plastic unlike the original statue was used to make the copy."],
+   correct:1,exp:"The comparison must be between parallel items: original statue vs. copy. The original incorrectly compares 'the original statue' with 'plastic.' Option B correctly compares statue to copy."},
+
+  {id:141,topic:"Writing",sub:"Parallelism",
+   context:"The cost of housing in New York City is far higher than Newark, New Jersey.",
+   q:"Which best corrects the comparison error?",
+   choices:["NO CHANGE","The cost of housing in New York City is far higher than that in Newark, New Jersey.","The cost of housing in New York City is far higher than in Newark, New Jersey's cost.","The cost in New York City's housing is far higher than Newark, New Jersey."],
+   correct:1,exp:"You must compare the cost of housing in NYC to the cost of housing in Newark — not to Newark itself. 'Higher than that in Newark' uses 'that' as a pronoun for 'the cost of housing.'"},
+
+  {id:142,topic:"Writing",sub:"Parallelism",
+   context:"The waitress not only brought the check but also a slice of birthday cake for my sister.",
+   q:"Which is the correct parallel structure for 'not only... but also'?",
+   choices:["NO CHANGE","The waitress brought not only the check but also a slice of birthday cake for my sister.","The waitress not only brought the check but a slice of birthday cake for my sister also.","Not only the check was brought by the waitress but also a slice of birthday cake."],
+   correct:1,exp:"With 'not only... but also,' the verb must come before 'not only': 'brought not only X but also Y.' Both X and Y are noun phrases — parallel ✓."},
+
+  {id:143,topic:"Writing",sub:"Parallelism",
+   context:"For dessert, you can choose between crème brûlée or chocolate mousse.",
+   q:"Which best corrects the idiom error?",
+   choices:["NO CHANGE","For dessert, you can choose between crème brûlée and chocolate mousse.","For dessert, you can choose crème brûlée or chocolate mousse.","For dessert, you can choose either crème brûlée nor chocolate mousse."],
+   correct:1,exp:"'Between' must be paired with 'and,' not 'or.' The correct idiom is 'choose between A and B.' Option C ('choose A or B' without 'between') also works, but B directly corrects the idiom error."},
+
+  {id:144,topic:"Writing",sub:"Parallelism",
+   context:"I avoided driving downtown although I knew there would be massive traffic jams.",
+   q:"Is this sentence correct as written?",
+   choices:["Yes — no error","No — 'although' should be 'because'","No — 'avoided' should be 'have avoided'","No — there should be a comma after 'downtown'"],
+   correct:0,exp:"The sentence is correct as written. 'Although I knew there would be massive traffic jams' is a dependent clause correctly attached to the independent clause. 'Although' correctly signals a concession (she avoided it despite knowing). No error."},
+
+  // ── WRITING: VERB TENSE (5 questions) ───────────────────────────────────
+  {id:145,topic:"Writing",sub:"Verb Tense",
+   context:"Whenever I go to the beach, I always [dipped / dip / will dip] my feet in the ocean.",
+   q:"Which verb tense correctly fills the bracket?",
+   choices:["dipped","dip","will dip","had dipped"],
+   correct:1,exp:"'Whenever I go' establishes a habitual/recurring present action. 'Whenever I go... I dip' — both simple present tense for a habitual action. 'Dipped' is past; 'will dip' shifts to future."},
+
+  {id:146,topic:"Writing",sub:"Verb Tense",
+   context:"I [did not see / have not seen] him since he left the party.",
+   q:"Which verb tense correctly fills the bracket?",
+   choices:["did not see","have not seen","had not seen","will not have seen"],
+   correct:1,exp:"'Since' signals an action begun in the past that continues to the present — present perfect ('have not seen'). 'Did not see' would indicate a completed past action at a specific time."},
+
+  {id:147,topic:"Writing",sub:"Verb Tense",
+   context:"By that time, he already [confessed / had confessed / has confessed] to the police.",
+   q:"Which verb tense correctly fills the bracket?",
+   choices:["confessed","had confessed","has confessed","would confess"],
+   correct:1,exp:"'By that time' signals past perfect — an action completed before another past moment. 'Had confessed' shows it happened before 'that time.' 'Has confessed' is present perfect (incorrect here)."},
+
+  {id:148,topic:"Writing",sub:"Verb Tense",
+   context:"Because of his hectic schedule, which [included / includes / had included] organizing the March on Washington, Dr. King didn't begin drafting until 12 hours before his speech.",
+   q:"Which verb tense maintains consistency with the passage's past tense?",
+   choices:["included","includes","had included","would include"],
+   correct:0,exp:"The passage is in past tense ('didn't begin drafting'). The relative clause should use simple past: 'which included.' 'Includes' (present) creates an inconsistent tense shift."},
+
+  {id:149,topic:"Writing",sub:"Idioms",
+   context:"Poor Zeppo was often regarded as the [less / least] talented of the Marx brothers.",
+   q:"Which comparative form correctly fills the bracket?",
+   choices:["less","least","lesser","more less"],
+   correct:1,exp:"There were several Marx brothers (more than two), so the superlative 'least' is correct. If comparing only two people, 'less' would be used."},
+
+  // ── MATH: PERCENTAGES (12 questions) ────────────────────────────────────
+  {id:150,topic:"Math",sub:"Percentages",
+   q:"A department store buys a dress for $250 and sells it at a 35% markup. What is the selling price?",
+   choices:["$285.00","$312.50","$337.50","$350.00"],
+   correct:2,exp:"Markup: $250 × (1 + 0.35) = $250 × 1.35 = $337.50. For percent increase, multiply by (1 + decimal percent)."},
+
+  {id:151,topic:"Math",sub:"Percentages",
+   q:"In 1900, wild Asian elephant population was 200,000. It decreased 80% over 100 years. Approximate population in 2000?",
+   choices:["20,000","40,000","80,000","160,000"],
+   correct:1,exp:"Decrease 80% → multiply by (1 − 0.80) = 0.20. So 200,000 × 0.20 = 40,000."},
+
+  {id:152,topic:"Math",sub:"Percentages",
+   q:"Mars surface gravity is 62% less than Earth's. A 400-lb rover on Earth would weigh how much on Mars?",
+   choices:["62 lbs","152 lbs","248 lbs","648 lbs"],
+   correct:1,exp:"62% less: weight = 400 × (1 − 0.62) = 400 × 0.38 = 152 lbs."},
+
+  {id:153,topic:"Math",sub:"Percentages",
+   q:"A website gets x visitors/hour. Traffic grows 250%, then falls 45%. Final visitors/hour?",
+   choices:["(1 + 2.5 − 0.45)x","(2.5)(0.45)x","(2.5)(0.55)x","(3.5)(0.55)x"],
+   correct:3,exp:"250% increase: × 3.5. Then 45% decrease: × 0.55. Total: x × 3.5 × 0.55."},
+
+  {id:154,topic:"Math",sub:"Percentages",
+   q:"A rectangle's base decreases 20% and height increases 50%. Percent change in area?",
+   choices:["20% decrease","30% increase","20% increase","35% increase"],
+   correct:2,exp:"New area = (0.80 × base)(1.50 × height) = 1.20 × original area. That's a 20% INCREASE. (0.80 × 1.50 = 1.20)"},
+
+  {id:155,topic:"Math",sub:"Percentages",
+   q:"After a drug, a person's heart rate is 12% higher. Carlos's post-drug rate is 86 bpm. What is his original rate?",
+   choices:["65 bpm","74 bpm","77 bpm","96 bpm"],
+   correct:2,exp:"Original × 1.12 = 86 → original = 86 ÷ 1.12 ≈ 76.8 ≈ 77 bpm. Don't subtract 12% from 86 — work backwards."},
+
+  {id:156,topic:"Math",sub:"Percentages",
+   q:"Alfonso increases his cheese order 140%, then decreases it 35%. Final amount is x. Which expression gives the original?",
+   choices:["x(1.4)(0.35)","x ÷ (1.4 × 0.65)","x(2.4)(0.65)","x ÷ (2.4 × 0.65)"],
+   correct:3,exp:"140% increase = × 2.4. 35% decrease = × 0.65. Final = original × 2.4 × 0.65. So original = x ÷ (2.4 × 0.65)."},
+
+  {id:157,topic:"Math",sub:"Percentages",
+   q:"Coach seat pitch is 20% less than business class. Coach pitch = 31 inches. Business class pitch?",
+   choices:["24.8 in","37.2 in","38.75 in","51.0 in"],
+   correct:2,exp:"Business × 0.80 = 31 → business = 31 ÷ 0.80 = 38.75 inches. Note: 31 × 1.20 = 37.2 is wrong — that would calculate 20% above coach, not the original business pitch."},
+
+  {id:158,topic:"Math",sub:"Percentages",
+   q:"Jessie earned 25% commission plus $95 bonus for total of $215. What was the value of goods she sold?",
+   choices:["$101.25","$148.75","$480","$765"],
+   correct:2,exp:"0.25s + 95 = 215 → 0.25s = 120 → s = $480."},
+
+  {id:159,topic:"Math",sub:"Percentages",
+   q:"Pets-R-Us posted a 150% increase in beagles sold in 2012 over 2011. If 52 were sold in 2011, how many in 2012?",
+   choices:["78","104","130","182"],
+   correct:2,exp:"150% INCREASE: new = 52 × (1 + 1.50) = 52 × 2.5 = 130. Don't confuse 'increase BY 150%' with 'increase TO 150%.'"},
+
+  {id:160,topic:"Math",sub:"Percentages",
+   q:"A $480 tablet is discounted 64%, then taxed 10%. What is the final price?",
+   choices:["$172.80","$190.08","$168.96","$201.60"],
+   correct:1,exp:"After 64% discount: $480 × 0.36 = $172.80. After 10% tax: $172.80 × 1.10 = $190.08."},
+
+  {id:161,topic:"Math",sub:"Percentages",
+   q:"After a 32% decrease, a number is 170. What was the original?",
+   choices:["115.6","224.4","250","265"],
+   correct:2,exp:"Original × 0.68 = 170 → Original = 170 ÷ 0.68 = 250."},
+
+  {id:162,topic:"Math",sub:"Percentages",
+   q:"Sam pays 8% tax then 22% tip on a restaurant bill. If the final total is d dollars, what was the original bill?",
+   choices:["d ÷ (1.08 + 1.22)","d × (1.08)(1.22)","d ÷ (1.08)(1.22)","d − 0.30"],
+   correct:2,exp:"Original × 1.08 × 1.22 = d → Original = d ÷ (1.08 × 1.22). Tax and tip are applied sequentially, so multiply the factors together in the denominator."},
+
+  // ── MATH: EXPONENTIAL MODELS (5 questions) ──────────────────────────────
+  {id:163,topic:"Math",sub:"Exponential Models",
+   q:"Willie needs $1,000 in 4 years. A savings account earns 4% compounded annually. How much must he invest today?",
+   choices:["$260","$785","$855","$1,170"],
+   correct:2,exp:"PV = FV ÷ (1+r)^n = $1,000 ÷ (1.04)^4 = $1,000 ÷ 1.1699 ≈ $855."},
+
+  {id:164,topic:"Math",sub:"Exponential Models",
+   q:"A vet gives an alligator D(h) = 9(0.6)^h mg of ketamine where h = hours. Which gives concentration after t 20-minute intervals?",
+   choices:["D = 9(0.6/20)^t","D = 9(0.6)^(3t)","D = 9(1.8)^t","D = 9(0.6)^(t/3)"],
+   correct:3,exp:"20 minutes = 1/3 of an hour. After t 20-minute intervals, h = t/3. Substitute: D = 9(0.6)^(t/3)."},
+
+  {id:165,topic:"Math",sub:"Exponential Models",
+   q:"An exponential function with growth factor > 1: as x increases, y:",
+   choices:["Decreases at a constant rate","Increases at a constant rate","Decreases at an increasing rate","Increases at an increasing rate"],
+   correct:3,exp:"Exponential growth (factor > 1) accelerates — each step multiplies by the same factor, so absolute increases get larger and larger. Different from linear growth which adds a fixed amount each step."},
+
+  {id:166,topic:"Math",sub:"Exponential Models",
+   q:"A quantity decreases by 40% each year. If the initial value is 500, what is the value after 2 years?",
+   choices:["100","180","200","300"],
+   correct:1,exp:"After year 1: 500 × 0.60 = 300. After year 2: 300 × 0.60 = 180. Decay factor is (1 − 0.40) = 0.60 applied each year."},
+
+  {id:167,topic:"Math",sub:"Exponential Models",
+   q:"A cape gannet's dive: e = 15t² − 75t + 78.75. What is its height at the beginning of the dive (t=0)?",
+   choices:["0 feet","15 feet","75 feet","78.75 feet"],
+   correct:3,exp:"At t = 0: e = 15(0) − 75(0) + 78.75 = 78.75 feet. For any polynomial in standard form, the y-intercept (value when x=0) is the constant term."},
+
+  // ── MATH: QUADRATIC MODELS (8 questions) ────────────────────────────────
+  {id:168,topic:"Math",sub:"Quadratic Models",
+   q:"A basketball's height: h = −4.9t² + 9.8t + 2.4. What does 2.4 represent?",
+   choices:["The maximum height","The time when the ball lands","The height when released (t=0)","The launch speed"],
+   correct:2,exp:"At t = 0: h = 2.4. The constant term is the initial value — the height at the moment the ball was thrown."},
+
+  {id:169,topic:"Math",sub:"Quadratic Models",
+   q:"A ball's height: h = −4.9(t − 2.19)(t + 0.18). What does 2.19 represent?",
+   choices:["The maximum height","The initial height","The time the ball lands","The speed at launch"],
+   correct:2,exp:"The x-intercepts are t = 2.19 and t = −0.18. Since t = −0.18 is negative (before launch), t = 2.19 is when the ball lands (h = 0)."},
+
+  {id:170,topic:"Math",sub:"Quadratic Models",
+   q:"A ball's height: h = −4.9(t − 1)² + 7.3. What does 7.3 represent?",
+   choices:["Time to reach max height","Initial height","Maximum height of the ball","Speed at t=1"],
+   correct:2,exp:"Vertex form y = a(x−h)²+k: vertex = (1, 7.3). Since a = −4.9 < 0, parabola opens downward, so vertex is the maximum. Maximum height = 7.3 meters."},
+
+  {id:171,topic:"Math",sub:"Quadratic Models",
+   q:"An arch over a river: h = −0.02m² + 1.1m. How wide is the river?",
+   choices:["45 m","50 m","55 m","60 m"],
+   correct:2,exp:"Set h = 0: 0 = −0.02m² + 1.1m = −0.02m(m − 55). So m = 0 or m = 55. River width = 55 − 0 = 55 meters."},
+
+  {id:172,topic:"Math",sub:"Quadratic Models",
+   q:"A cape gannet dive: e = 15(t − 2.5)² − 15. What is the minimum elevation?",
+   choices:["−15 feet","2.5 feet","15 feet","0 feet"],
+   correct:0,exp:"Vertex form: vertex = (2.5, −15). Since a = 15 > 0 (opens upward), vertex is the minimum. Minimum elevation = −15 feet (15 feet below sea level)."},
+
+  {id:173,topic:"Math",sub:"Quadratic Models",
+   q:"Cape gannet dive: e = 15(t − 1.5)(t − 3.5). After how many seconds is the gannet at sea level?",
+   choices:["1.5 seconds only","3.5 seconds only","1.5 and 3.5 seconds","2.5 seconds"],
+   correct:2,exp:"Set e = 0: t = 1.5 or t = 3.5. The bird is at sea level (e=0) twice: going down at t=1.5 and coming back up at t=3.5."},
+
+  {id:174,topic:"Math",sub:"Quadratic Models",
+   q:"f(x) = x² + x − 2. What are the roots?",
+   choices:["x = 1 and x = 2","x = −2 and x = 1","x = 2 and x = −1","x = −1 and x = −2"],
+   correct:1,exp:"Factor: x² + x − 2 = (x + 2)(x − 1). Roots: x = −2 and x = 1. Check: (−2)²+(−2)−2=0 ✓; (1)²+1−2=0 ✓"},
+
+  {id:175,topic:"Math",sub:"Quadratic Models",
+   q:"The vertex of y = 2(x − 3)² + 5 is at what point?",
+   choices:["(3, 5)","(−3, 5)","(3, −5)","(−3, −5)"],
+   correct:0,exp:"In vertex form y = a(x − h)² + k, the vertex is (h, k). Here h = 3 and k = 5. Vertex = (3, 5). Note: h has the opposite sign from what appears in the equation."},
+
+  // ── MATH: TRIG (5 questions) ─────────────────────────────────────────────
+  {id:176,topic:"Math",sub:"Trigonometry",
+   q:"In a right triangle with sin(θ) = 3/5, what is tan(θ)?",
+   choices:["3/4","4/3","3/5","4/5"],
+   correct:0,exp:"sin = opp/hyp = 3/5: opp=3, hyp=5. By Pythagoras: adj=4. tan = opp/adj = 3/4."},
+
+  {id:177,topic:"Math",sub:"Trigonometry",
+   q:"If cos(θ) = 5/13, what is sin(θ)?",
+   choices:["5/12","12/13","13/12","5/13"],
+   correct:1,exp:"cos = adj/hyp = 5/13: adj=5, hyp=13. Pythagoras: opp=√(169−25)=12. sin = opp/hyp = 12/13."},
+
+  {id:178,topic:"Math",sub:"Trigonometry",
+   q:"sin(30°) equals:",
+   choices:["√3/2","1/2","√2/2","1"],
+   correct:1,exp:"In 30-60-90 triangle, sides are x, x√3, 2x. sin(30°) = x/(2x) = 1/2. Key: sin(30°)=1/2, sin(45°)=√2/2, sin(60°)=√3/2."},
+
+  {id:179,topic:"Math",sub:"Trigonometry",
+   q:"If sin(40°) = 0.643, what is cos(50°)?",
+   choices:["0.357","0.643","0.766","1.000"],
+   correct:1,exp:"Complementary angles: sin(θ) = cos(90° − θ). So sin(40°) = cos(50°) = 0.643."},
+
+  {id:180,topic:"Math",sub:"Trigonometry",
+   q:"A 30-60-90 triangle has hypotenuse 10. What is the longer leg?",
+   choices:["5","5√2","5√3","10√3"],
+   correct:2,exp:"In 30-60-90: sides are x, x√3, 2x where 2x = hypotenuse = 10. So x = 5. Longer leg (opposite 60°) = x√3 = 5√3."},
+
+  // ── READING: DREAM SPEECH PASSAGE (10 questions) ────────────────────────
+  {id:181,topic:"Reading",sub:"Detail Questions",
+   passage:"'Originally, the speech was titled \"Normalcy, Never Again.\" Because of his hectic schedule, which included organizing the March on Washington, Dr. King didn't begin drafting his speech until 12 hours before he was scheduled to speak.'",
+   q:"According to the passage, what was the original title of Dr. King's speech?",
+   choices:['"I Have a Dream"','"Normalcy, Never Again"','"The March on Washington"','"A Dream of Equality"'],
+   correct:1,exp:"The passage explicitly states: 'Originally, the speech was titled \"Normalcy, Never Again.\"' The famous title came from an improvised moment during delivery."},
+
+  {id:182,topic:"Reading",sub:"Detail Questions",
+   passage:"'Three people contributed to the content of the speech: Dr. King; Stanley Levinson, a New York businessman and political activist; and Clarence Jones, a close friend and adviser of Dr. King.'",
+   q:"According to the passage, who was Stanley Levinson?",
+   choices:["A close friend and adviser of Dr. King","A New York businessman and political activist","A gospel singer who inspired Dr. King","A civil rights leader who organized the March"],
+   correct:1,exp:"The passage explicitly describes Stanley Levinson as 'a New York businessman and political activist.' Clarence Jones is described as 'a close friend and adviser.'"},
+
+  {id:183,topic:"Reading",sub:"Detail Questions",
+   passage:"'Some sections of the speech were originally delivered as part of a speech Dr. King gave in June 1963 after the Great Walk to Freedom in Detroit.'",
+   q:"Where did Dr. King previously deliver parts of the 'I Have a Dream' speech?",
+   choices:["Washington D.C.","New York City","Detroit","Atlanta"],
+   correct:2,exp:"The passage explicitly states the sections 'were originally delivered as part of a speech Dr. King gave in June 1963 after the Great Walk to Freedom in Detroit.'"},
+
+  {id:184,topic:"Reading",sub:"Inference Questions",
+   passage:"'According to co-author Jones, Dr. King departed dramatically from the original draft, essentially ad-libbing one of the world's greatest speeches. As he was speaking, gospel singer Mahalia Jackson yelled to Dr. King: \"Tell them about the dream, Martin.\"'",
+   q:"What can be inferred about the 'I have a dream' phrase?",
+   choices:["It was carefully planned and rehearsed","It was written by Clarence Jones","It was improvised in response to Mahalia Jackson's encouragement","It appeared in all previous versions of the speech"],
+   correct:2,exp:"Dr. King 'departed dramatically from the original draft, essentially ad-libbing,' and after Jackson's encouragement 'he began punctuating his speech with the phrase.' The inference: it was improvised in response to Jackson."},
+
+  {id:185,topic:"Reading",sub:"Main Idea",
+   passage:"'Viewed by most scholars to be the most important American speech of the twentieth century... Originally titled \"Normalcy, Never Again,\" Dr. King essentially ad-libbed one of the world's greatest speeches... King had mentioned his dream of equality before, but it had never resonated with an audience until he repeated it before this huge crowd.'",
+   q:"What is the main idea of this passage?",
+   choices:["Martin Luther King Jr. was an excellent public speaker","The March on Washington was the largest civil rights demonstration","The 'I Have a Dream' speech was largely improvised and became unexpectedly historic","Three people wrote the speech that Dr. King delivered"],
+   correct:2,exp:"The passage traces how the speech evolved from a planned draft to an improvised masterpiece — originally titled differently, ad-libbed in the moment, and powered by an unexpected phrase that resonated like never before."},
+
+  {id:186,topic:"Reading",sub:"Words-in-Context",
+   passage:"'According to co-author Jones, Dr. King departed dramatically from the original draft, essentially ad-libbing one of the world's greatest speeches.'",
+   q:"As used in the passage, 'ad-libbing' most nearly means:",
+   choices:["Reading carefully from prepared notes","Improvising spontaneously without a script","Quoting from previous speeches","Speaking very slowly and deliberately"],
+   correct:1,exp:"'Ad-libbing' means improvising — speaking spontaneously without following a script. The context (departing from the draft, adding the unplanned 'dream' phrase) confirms this."},
+
+  {id:187,topic:"Reading",sub:"Signal Words",
+   passage:"'King had mentioned his dream of equality before, but it had never resonated with an audience until he repeated it before this huge crowd.'",
+   q:"What contrast does 'but' signal in this sentence?",
+   choices:["The speech was long but the crowd stayed engaged","Dr. King had used the phrase before but never with the same impact","The crowd was large but not enthusiastic","The speech was planned but poorly executed"],
+   correct:1,exp:"'But' signals contrast: the phrase existed before (King had mentioned it) BUT something was different this time (it had never resonated until this crowd). The contrast is between prior unremarkable uses and this historic moment."},
+
+  {id:188,topic:"Reading",sub:"Detail Questions",
+   passage:"'Predictions play a huge role in everyday life. From the weather to financial markets to races for public office, the ability to forecast what will happen tomorrow, or next year, is a universal aspiration.'",
+   q:"Which is NOT mentioned as an area where prediction plays a role?",
+   choices:["Weather forecasting","Financial markets","Sports outcomes","Political races"],
+   correct:2,exp:"The passage mentions weather, financial markets, and political races. Sports outcomes are not mentioned. On SAT reading, 'not mentioned' questions require care — don't infer what the passage doesn't state."},
+
+  {id:189,topic:"Reading",sub:"Inference Questions",
+   passage:"'The stratospheric rise of the genre was halted by My Bloody Valentine itself, which in 1991 released its magnum opus, Loveless. The album was so widely celebrated that many imitators were frozen in its wake.'",
+   q:"What can be inferred about the relationship between Loveless and the Shoegazing genre?",
+   choices:["Loveless was a commercial failure that ended the genre","The album was so definitive it paradoxically ended the movement it perfected","Loveless inspired hundreds of new imitators","Kevin Shields intentionally ended the genre"],
+   correct:1,exp:"Loveless was the genre's peak — so celebrated that imitators were 'frozen in its wake.' It paradoxically became impossible to follow, halting the very genre it perfected."},
+
+  {id:190,topic:"Reading",sub:"Rhetoric Questions",
+   passage:"'Viewed by most scholars to be the most important American speech of the twentieth century, civil rights activist Martin Luther King, Jr. delivered the public address \"I Have a Dream\" on August 28, 1963.'",
+   q:"Why does the author begin with the scholarly assessment?",
+   choices:["To argue that scholars are always right","To establish the speech's significance before detailing how it came to be","To contrast the speech's fame with its humble origins","To persuade the reader to study American history"],
+   correct:1,exp:"Opening with the scholarly consensus immediately establishes why the behind-the-scenes details matter — the speech is historically monumental, so readers understand the stakes."},
 ];
 
 const ALL_VOCAB = [
