@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SAT Daily Practice</title>
+<title>ACT Daily Practice</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; background: #f5f5f5; min-height: 100vh; padding: 1rem; }
@@ -64,7 +64,7 @@
 <body>
 <div class="container">
   <div class="header">
-    <h1>SAT Daily Practice</h1>
+    <h1>ACT Daily Practice</h1>
     <p id="date-line"></p>
   </div>
   <div id="root"></div>
@@ -74,319 +74,319 @@ const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyOjNlK5aO42l_s9AYU
 
 const ALL_QUESTIONS = [
   // ── WRITING: PUNCTUATION (20 questions) ─────────────────────────────────
-  {id:1,topic:"Writing",sub:"Punctuation",
+  {id:1,topic:"English",sub:"Punctuation",
    context:"The class started out with over 60 students, now there are only 10 left.",
    q:"Which best corrects the punctuation error?",
    choices:["NO CHANGE","The class started out with over 60 students; now there are only 10 left.","The class started out with over 60 students and now there are only 10 left.","The class started out with over 60 students: now there are only 10 left."],
    correct:1,exp:"This is a comma splice — two independent clauses joined by only a comma. A semicolon correctly joins two complete, closely related sentences."},
 
-  {id:2,topic:"Writing",sub:"Punctuation",
+  {id:2,topic:"English",sub:"Punctuation",
    context:"There are several baby gorillas at the zoo, however the public isn't allowed to see them yet.",
    q:"Which best corrects the punctuation error?",
    choices:["NO CHANGE","There are several baby gorillas at the zoo; however, the public isn't allowed to see them yet.","There are several baby gorillas at the zoo however, the public isn't allowed to see them yet.","There are several baby gorillas at the zoo, however, the public isn't allowed to see them yet."],
    correct:1,exp:"'However' as a conjunctive adverb needs a semicolon before it and a comma after it when joining two independent clauses."},
 
-  {id:3,topic:"Writing",sub:"Punctuation",
+  {id:3,topic:"English",sub:"Punctuation",
    context:"The colors of a rainbow are: red, orange, yellow, green, blue, and violet.",
    q:"Which best corrects the error?",
    choices:["NO CHANGE","The colors of a rainbow are red, orange, yellow, green, blue, and violet.","The colors of a rainbow are; red, orange, yellow, green, blue, and violet.","The colors of a rainbow — red, orange, yellow, green, blue, and violet."],
    correct:1,exp:"A colon must follow a complete independent clause. 'The colors of a rainbow are' is not complete on its own, so no colon should be used."},
 
-  {id:4,topic:"Writing",sub:"Punctuation",
+  {id:4,topic:"English",sub:"Punctuation",
    context:"I need to find a new roommate. Because the one I have now isn't working out too well.",
    q:"Which best corrects the error?",
    choices:["NO CHANGE","I need to find a new roommate; because the one I have now isn't working out too well.","I need to find a new roommate because the one I have now isn't working out too well.","I need to find a new roommate, because, the one I have now isn't working out too well."],
    correct:2,exp:"The second sentence is a fragment — 'Because...' cannot stand alone. Attaching it to the main clause corrects the fragment."},
 
-  {id:5,topic:"Writing",sub:"Punctuation",
+  {id:5,topic:"English",sub:"Punctuation",
    context:"Although my French is poor; I was able to get by in Paris with my phrase book.",
    q:"Which best corrects the error?",
    choices:["NO CHANGE","Although my French is poor, I was able to get by in Paris with my phrase book.","Although my French is poor: I was able to get by in Paris with my phrase book.","Although my French is poor — I was able to get by in Paris with my phrase book."],
    correct:1,exp:"'Although my French is poor' is a dependent clause — it cannot stand alone and cannot be separated from the main clause by a semicolon. A comma correctly follows an introductory dependent clause."},
 
-  {id:6,topic:"Writing",sub:"Punctuation",
+  {id:6,topic:"English",sub:"Punctuation",
    context:"Sojourner Truth, and Lucretia Mott were two of this country's earliest feminist leaders.",
    q:"Which best corrects the error?",
    choices:["NO CHANGE","Sojourner Truth and Lucretia Mott were two of this country's earliest feminist leaders.","Sojourner Truth; and Lucretia Mott were two of this country's earliest feminist leaders.","Sojourner Truth — and Lucretia Mott — were two of this country's earliest feminist leaders."],
    correct:1,exp:"Never use a comma in a list of only two items. 'Sojourner Truth and Lucretia Mott' is a two-item list — no comma is needed before 'and.'"},
 
-  {id:7,topic:"Writing",sub:"Punctuation",
+  {id:7,topic:"English",sub:"Punctuation",
    context:"His books are wonderful I own every one of them.",
    q:"Which best corrects the run-on sentence?",
    choices:["NO CHANGE","His books are wonderful, I own every one of them.","His books are wonderful; I own every one of them.","His books are wonderful: I own every one of them."],
    correct:2,exp:"This is a run-on — two independent clauses with no punctuation. A semicolon correctly joins two complete, closely related sentences."},
 
-  {id:8,topic:"Writing",sub:"Punctuation",
+  {id:8,topic:"English",sub:"Punctuation",
    context:"A recurring theme in his articles is that politicians, particularly members of Congress are hopelessly corrupt.",
    q:"Which best corrects the punctuation?",
    choices:["NO CHANGE","politicians, particularly members of Congress, are hopelessly corrupt.","politicians; particularly members of Congress, are hopelessly corrupt.","politicians particularly members of Congress, are hopelessly corrupt."],
    correct:1,exp:"The phrase 'particularly members of Congress' is a parenthetical — it adds nonessential information and interrupts the flow. It must be set off by commas on both sides."},
 
-  {id:9,topic:"Writing",sub:"Punctuation",
+  {id:9,topic:"English",sub:"Punctuation",
    context:"What's increasingly clear, is that the federal government is not prepared to handle this crisis.",
    q:"Which best corrects the error?",
    choices:["NO CHANGE","What's increasingly clear is that the federal government is not prepared to handle this crisis.","What's increasingly clear; is that the federal government is not prepared to handle this crisis.","What's increasingly clear — is that the federal government is not prepared to handle this crisis."],
    correct:1,exp:"No comma should separate the subject ('What's increasingly clear') from its verb ('is'). The comma creates an unnatural pause that breaks the sentence structure."},
 
-  {id:10,topic:"Writing",sub:"Punctuation",
+  {id:10,topic:"English",sub:"Punctuation",
    context:"People, who live in glass houses, should not throw stones.",
    q:"Which best corrects the error?",
    choices:["NO CHANGE","People who live in glass houses, should not throw stones.","People who live in glass houses should not throw stones.","People; who live in glass houses, should not throw stones."],
    correct:2,exp:"'Who live in glass houses' is a restrictive clause — it defines which people the sentence is about and cannot be removed without changing the meaning. Restrictive clauses should not be set off by commas."},
 
   // ── WRITING: APOSTROPHES (10 questions) ─────────────────────────────────
-  {id:11,topic:"Writing",sub:"Apostrophes",
+  {id:11,topic:"English",sub:"Apostrophes",
    context:"The sight of [daffodil's / daffodils / daffodils'] always cheers me up.",
    q:"Which word correctly fills the bracket?",
    choices:["daffodil's","daffodils","daffodils'","daffodil s"],
    correct:1,exp:"'Daffodils' is a simple plural noun — no possession, no apostrophe needed. 'Daffodil's' means 'belonging to a daffodil.'"},
 
-  {id:12,topic:"Writing",sub:"Apostrophes",
+  {id:12,topic:"English",sub:"Apostrophes",
    context:"[It's / Its] often said that a computer program is only as good as [its / it's] programmer.",
    q:"Which pair correctly fills the brackets?",
    choices:["It's … its","Its … it's","Its … its","It's … it's"],
    correct:0,exp:"First: 'It's often said' = 'It is often said' — contraction needs apostrophe. Second: 'its programmer' = possessive pronoun — no apostrophe. Possessive pronouns (its, whose, theirs) never take apostrophes."},
 
-  {id:13,topic:"Writing",sub:"Apostrophes",
+  {id:13,topic:"English",sub:"Apostrophes",
    context:"[Their / They're] usually in [their / there] offices at this time, but they left early today.",
    q:"Which pair correctly fills the brackets?",
    choices:["Their … their","They're … their","Their … there","They're … there"],
    correct:1,exp:"First: 'They're usually' = 'They are usually' — contraction. Second: 'in their offices' — possessive pronoun showing ownership. 'There' refers to a place."},
 
-  {id:14,topic:"Writing",sub:"Apostrophes",
+  {id:14,topic:"English",sub:"Apostrophes",
    context:"Did you invite the [Smiths / Smith's / Smiths'] to the party?",
    q:"Which word correctly fills the bracket?",
    choices:["Smiths","Smith's","Smiths'","Smith's'"],
    correct:0,exp:"You're referring to the Smith family as a group — just a plural, no possession. 'Smiths' is the correct plural. 'Smith's' means 'belonging to Smith.'"},
 
-  {id:15,topic:"Writing",sub:"Apostrophes",
+  {id:15,topic:"English",sub:"Apostrophes",
    context:"I couldn't find my [dogs / dog's / dogs'] collar, even though I looked everywhere.",
    q:"Which word correctly fills the bracket?",
    choices:["dogs","dog's","dogs'","dog"],
    correct:1,exp:"One dog owns one collar — singular possessive. 'Dog's collar' = the collar belonging to the dog. 'Dogs' is just plural, and 'dogs'' would mean the collar belongs to multiple dogs."},
 
-  {id:16,topic:"Writing",sub:"Apostrophes",
+  {id:16,topic:"English",sub:"Apostrophes",
    context:"The student walked into the [teachers / teacher's / teachers'] lounge by mistake.",
    q:"Which word correctly fills the bracket?",
    choices:["teachers","teacher's","teachers'","teacher"],
    correct:2,exp:"A teachers' lounge is shared by multiple teachers, so it's a plural possessive — 'teachers'' (apostrophe after the s). 'Teacher's' would mean only one teacher owns it."},
 
-  {id:17,topic:"Writing",sub:"Apostrophes",
+  {id:17,topic:"English",sub:"Apostrophes",
    context:"[Your / You're] writing will improve if [your / you're] careful about using apostrophes.",
    q:"Which pair correctly fills the brackets?",
    choices:["Your … your","You're … you're","Your … you're","You're … your"],
    correct:2,exp:"First: 'Your writing' — possessive pronoun (whose writing? yours). Second: 'if you're careful' = 'if you are careful' — contraction needs apostrophe."},
 
-  {id:18,topic:"Writing",sub:"Apostrophes",
+  {id:18,topic:"English",sub:"Apostrophes",
    context:"The tenants broke three appliances, the washing machine, the dryer, and the oven. The landlord was furious when she discovered the [tenants / tenant's / tenants'] negligence.",
    q:"Which word correctly fills the bracket?",
    choices:["tenants","tenant's","tenants'","tenants's"],
    correct:2,exp:"Multiple tenants are responsible for the negligence — plural possessive. 'Tenants'' (apostrophe after the s) correctly shows possession by multiple people."},
 
   // ── WRITING: VERB AGREEMENT (10 questions) ──────────────────────────────
-  {id:19,topic:"Writing",sub:"Verb Agreement",
+  {id:19,topic:"English",sub:"Verb Agreement",
    context:"Neither the mudslides nor the storm ___ going to keep me away.",
    q:"Which verb correctly fills the blank?",
    choices:["were","are","was","have been"],
    correct:2,exp:"With NEITHER/NOR, the verb agrees with the subject closest to it. 'The storm' is singular → 'was.' If it were 'Neither the storm nor the mudslides,' the answer would be 'were.'"},
 
-  {id:20,topic:"Writing",sub:"Verb Agreement",
+  {id:20,topic:"English",sub:"Verb Agreement",
    context:"The number of students in the advanced class ___ increased every year.",
    q:"Which verb correctly fills the blank?",
    choices:["have","hasn't","has","haven't"],
    correct:2,exp:"'The number of' takes a singular verb. Compare: 'A number of students HAVE increased their scores' — 'a number of' takes plural."},
 
-  {id:21,topic:"Writing",sub:"Verb Agreement",
+  {id:21,topic:"English",sub:"Verb Agreement",
    context:"Swimming and skiing ___ my two favorite activities.",
    q:"Which verb correctly fills the blank?",
    choices:["is","was","has been","are"],
    correct:3,exp:"When two subjects are joined by AND, the verb is plural. 'Swimming and skiing ARE my two favorite activities.'"},
 
-  {id:22,topic:"Writing",sub:"Verb Agreement",
+  {id:22,topic:"English",sub:"Verb Agreement",
    context:"Everyone on the team ___ responsible for submitting their own timesheet.",
    q:"Which verb correctly fills the blank?",
    choices:["are","were","is","have been"],
    correct:2,exp:"'Everyone' is always singular → 'Everyone IS responsible.' Same for everybody, someone, nobody, each, either, neither."},
 
-  {id:23,topic:"Writing",sub:"Verb Agreement",
+  {id:23,topic:"English",sub:"Verb Agreement",
    context:"The crowd at the concert ___ cheering loudly when the band took the stage.",
    q:"Which verb correctly fills the blank?",
    choices:["were","are","is","have been"],
    correct:0,exp:"'Crowd' is a collective noun. In this sentence, the crowd is acting as individuals (each person cheering) → plural verb 'were.' If the crowd were acting as one unit, you'd use singular."},
 
-  {id:24,topic:"Writing",sub:"Verb Agreement",
+  {id:24,topic:"English",sub:"Verb Agreement",
    context:"A number of scientists ___ challenged the findings of the original study.",
    q:"Which verb correctly fills the blank?",
    choices:["has","have","was","is"],
    correct:1,exp:"'A number of' takes a plural verb. 'A number of scientists HAVE challenged.' Compare: 'The number of scientists IS growing' — 'the number of' takes singular."},
 
-  {id:25,topic:"Writing",sub:"Verb Agreement",
+  {id:25,topic:"English",sub:"Verb Agreement",
    context:"While most comic book fans knew about Wonder Woman, few ___ that she was just one of many great heroines of that era.",
    q:"Which verb correctly fills the blank to match the tense of the passage?",
    choices:["realize","knows","realized","have known"],
    correct:2,exp:"The passage is written in past tense ('fans knew'). 'Few realized' maintains consistent past tense. 'Realize' is present tense, 'knows' is present and doesn't agree with 'few.'"},
 
   // ── WRITING: SENTENCE STRUCTURE (8 questions) ───────────────────────────
-  {id:26,topic:"Writing",sub:"Sentence Structure",
+  {id:26,topic:"English",sub:"Sentence Structure",
    context:"Thurgood Marshall being one of the most respected Supreme Court justices of the 20th century.",
    q:"Which best corrects the fragment?",
    choices:["NO CHANGE","Thurgood Marshall, being one of the most respected Supreme Court justices of the 20th century.","Thurgood Marshall was one of the most respected Supreme Court justices of the 20th century.","Thurgood Marshall, who was one of the most respected justices of the 20th century."],
    correct:2,exp:"The original is a fragment — 'being' is a participle, not a finite verb. Replacing 'being' with 'was' gives the sentence a proper main verb and makes it complete."},
 
-  {id:27,topic:"Writing",sub:"Sentence Structure",
+  {id:27,topic:"English",sub:"Sentence Structure",
    context:"My uncle is not a big fan of new technologies, and still using a rotary phone.",
    q:"Which best corrects the error?",
    choices:["NO CHANGE","My uncle is not a big fan of new technologies, and still uses a rotary phone.","My uncle is not a big fan of new technologies, and still used a rotary phone.","My uncle is not a big fan of new technologies; and still using a rotary phone."],
    correct:1,exp:"'Using' (a participle) after 'and' breaks parallel structure. 'Is not a fan... and still uses' creates proper parallel structure with two present-tense verbs."},
 
-  {id:28,topic:"Writing",sub:"Sentence Structure",
+  {id:28,topic:"English",sub:"Sentence Structure",
    context:"Although skiing is my favorite activity, but I love ice-skating as well.",
    q:"Which best corrects the error?",
    choices:["NO CHANGE","Although skiing is my favorite activity, I love ice-skating as well.","Although skiing is my favorite activity; but I love ice-skating as well.","Skiing is my favorite activity, but I love ice-skating as well."],
    correct:1,exp:"'Although' and 'but' are both contrast connectors — using both together creates a double conjunction error. Remove one: either 'Although..., I love' or '..., but I love.'"},
 
-  {id:29,topic:"Writing",sub:"Sentence Structure",
+  {id:29,topic:"English",sub:"Sentence Structure",
    context:"Richard Scarry's books which are typically populated by common animal species such as cats, rabbits, and mice.",
    q:"Which best corrects the fragment?",
    choices:["NO CHANGE","Richard Scarry's books, which are typically populated by common animal species such as cats, rabbits, and mice.","Richard Scarry's books are typically populated by common animal species such as cats, rabbits, and mice.","Richard Scarry's books; which are typically populated by common animal species such as cats, rabbits, and mice."],
    correct:2,exp:"The original is a fragment — the relative clause 'which are...' attaches to 'books' but the sentence lacks a main predicate. 'Richard Scarry's books ARE typically populated' gives it a proper main verb."},
 
-  {id:30,topic:"Writing",sub:"Sentence Structure",
+  {id:30,topic:"English",sub:"Sentence Structure",
    context:"During the coal strike of 1902, and President Roosevelt forced mine owners to negotiate with workers.",
    q:"Which best corrects the error?",
    choices:["NO CHANGE","During the coal strike of 1902, President Roosevelt forced mine owners to negotiate with workers.","During the coal strike of 1902; President Roosevelt forced mine owners to negotiate with workers.","During the coal strike of 1902: President Roosevelt forced mine owners to negotiate with workers."],
    correct:1,exp:"'And' after the introductory phrase is incorrect — there's nothing before it to connect to. Remove 'and' and the sentence reads correctly: introductory phrase + comma + main clause."},
 
   // ── WRITING: TRANSITIONS (10 questions) ─────────────────────────────────
-  {id:31,topic:"Writing",sub:"Transitions",
+  {id:31,topic:"English",sub:"Transitions",
    context:"Management consulting is one of the highest paying careers. ___, it requires a great deal of travel and long hours.",
    q:"Which transition best shows contrast?",
    choices:["Furthermore","Therefore","Similarly","However"],
    correct:3,exp:"The second sentence contrasts with the first (high pay vs. demanding conditions). 'However' is a U-Turn word that signals contradiction or qualification of the previous statement."},
 
-  {id:32,topic:"Writing",sub:"Transitions",
+  {id:32,topic:"English",sub:"Transitions",
    context:"The experiment failed twice. ___, the team decided to try a completely different approach.",
    q:"Which transition best shows cause and effect?",
    choices:["However","Therefore","Similarly","In contrast"],
    correct:1,exp:"'Therefore' signals that what follows is a result or consequence. The failures caused the change in approach. 'However' signals contrast, not causation."},
 
-  {id:33,topic:"Writing",sub:"Transitions",
+  {id:33,topic:"English",sub:"Transitions",
    context:"The new policy was praised by most economists. ___, labor unions pushed back sharply.",
    q:"Which transition best fits?",
    choices:["Furthermore","In addition","Nevertheless","Similarly"],
    correct:2,exp:"'Nevertheless' signals that despite what came before, something contrasting happened. The unions' reaction contradicts the economists' praise."},
 
-  {id:34,topic:"Writing",sub:"Transitions",
+  {id:34,topic:"English",sub:"Transitions",
    context:"The GJP gave Sarkozy a 46% chance for re-election. ___, Sarkozy lost the election narrowly.",
    q:"Which transition best fits the relationship between these sentences?",
    choices:["However","Furthermore","In addition","Therefore"],
    correct:0,exp:"The forecast (46% chance) and the result (he lost) are contrasting — the result surprised or qualified the prediction. 'However' signals this U-Turn effectively."},
 
-  {id:35,topic:"Writing",sub:"Transitions",
+  {id:35,topic:"English",sub:"Transitions",
    context:"Probabilistic thinking involves an array of possible outcomes. [It / It also / It then] combines contradictory scenarios into a single prediction.",
    q:"Which option best combines the ideas while showing sequence?",
    choices:["It combines contradictory scenarios into a single prediction.","Probabilistic thinking involves an array of possible outcomes and then combines contradictory scenarios into a single prediction.","Probabilistic thinking involves an array of possible outcomes; it also combines contradictory scenarios into a single prediction.","Probabilistic thinking involves an array of possible outcomes, it then combines contradictory scenarios into a single prediction."],
    correct:1,exp:"Option B best shows the sequential relationship ('and then') in a single, concise sentence. Option D creates a comma splice. Option C is correct but less concise than B."},
 
-  {id:36,topic:"Writing",sub:"Transitions",
+  {id:36,topic:"English",sub:"Transitions",
    context:"Kevin Shields was widely celebrated for Loveless. ___, many of his contemporaries misinterpreted his revolutionary sound.",
    q:"Which transition best expresses that the second sentence is surprising or unexpected?",
    choices:["Furthermore","Consequently","Nonetheless","As a result"],
    correct:2,exp:"'Nonetheless' (like 'nevertheless' or 'however') signals that despite the success and celebration, the misinterpretation happened anyway. It's a U-Turn from the expected outcome."},
 
   // ── WRITING: WORD CHOICE (8 questions) ──────────────────────────────────
-  {id:37,topic:"Writing",sub:"Word Choice",
+  {id:37,topic:"English",sub:"Word Choice",
    passage:"For those with the [A) fulfillment / B) focus / C) fortitude / D) funds] to survive such a life, the rewards are clearly evident.",
    q:"Which word best fits the context?",
    choices:["fulfillment","focus","fortitude","funds"],
    correct:2,exp:"'Fortitude' means courage and endurance in the face of hardship — exactly right for surviving the demanding lifestyle described. 'Fulfillment' = satisfaction, 'focus' = attention, 'funds' = money."},
 
-  {id:38,topic:"Writing",sub:"Word Choice",
+  {id:38,topic:"English",sub:"Word Choice",
    passage:"The forecasters would have [A) predicted / B) have predicted / C) will have predicted / D) had predicted] that Sarkozy's negatives would offset the advantage of incumbency.",
    q:"Which verb form correctly fits the context of a past conditional?",
    choices:["would have predicted","have predicted","will have predicted","had predicted"],
    correct:0,exp:"'Would have predicted' correctly expresses a past conditional — what the forecasters expected would happen. 'Had predicted' would imply they already made the prediction explicitly, which the passage doesn't say."},
 
-  {id:39,topic:"Writing",sub:"Word Choice",
+  {id:39,topic:"English",sub:"Word Choice",
    passage:"Most management consulting firms [A) start to recruiting / B) start to recruit / C) start the recruitment of / D) start by recruiting] qualified candidates from top colleges in their Freshman and Sophomore years.",
    q:"Which option is idiomatically correct?",
    choices:["start to recruiting","start to recruit","start the recruitment of","start by recruiting"],
    correct:3,exp:"'Start by recruiting' is the most idiomatic and concise option. 'Start to recruit' is also grammatically acceptable but less precise. 'Start to recruiting' is never correct — 'to' must be followed by a base verb, not a gerund."},
 
-  {id:40,topic:"Writing",sub:"Word Choice",
+  {id:40,topic:"English",sub:"Word Choice",
    passage:"It is crucial that [A) one begins attending / B) one begins to attend / C) you are beginning to attend / D) you begin to attend] job fairs immediately.",
    q:"Which option is most idiomatic and consistent with the surrounding context?",
    choices:["one begins attending","one begins to attend","you are beginning to attend","you begin to attend"],
    correct:3,exp:"The passage shifts to addressing the reader directly ('you'). 'You begin to attend' is concise, direct, and correctly uses base form after 'crucial that.' 'You are beginning' is wordy and progressive where simple present is needed."},
 
-  {id:41,topic:"Writing",sub:"Word Choice",
+  {id:41,topic:"English",sub:"Word Choice",
    passage:"The stratospheric rise of the genre was halted by My Bloody Valentine itself, which in 1991 released its magnum opus, Loveless. The album was so widely celebrated that many imitators were frozen in its wake. Its critical success even drove Kevin Shields [A) mad. My Bloody Valentine / B) mad, but My Bloody Valentine / C) mad; My Bloody Valentine / D) mad and My Bloody Valentine] wouldn't release another album for 22 years.",
    q:"Which option most effectively combines the two sentences?",
    choices:["mad. My Bloody Valentine","mad, but My Bloody Valentine","mad; My Bloody Valentine","mad and My Bloody Valentine"],
    correct:1,exp:"Option B ('mad, but My Bloody Valentine') shows the contrast between the critical success driving Shields mad AND the band not releasing another album — the 'but' correctly signals the unexpected connection between these two outcomes."},
 
   // ── WRITING: PASSAGE-BASED (12 questions) ───────────────────────────────
-  {id:42,topic:"Writing",sub:"Passage-Based: Grammar",
+  {id:42,topic:"English",sub:"Passage-Based: Grammar",
    passage:"In the Golden Age of Comic Books, a period from the late [A) 1930s to the early 1950s, modern / B) 1930s, to the early 1950s, modern / C) 1930s to the early 1950s modern / D) 1930s, to the early 1950s; modern] comic books were first published.",
    q:"Which punctuation option correctly sets off the appositive phrase?",
    choices:["1930s to the early 1950s, modern","1930s, to the early 1950s, modern","1930s to the early 1950s modern","1930s, to the early 1950s; modern"],
    correct:0,exp:"The phrase 'a period from the late 1930s to the early 1950s' is an appositive — it renames 'the Golden Age of Comic Books.' It should be set off by a comma before AND after it. Option A provides the comma after '1950s' correctly."},
 
-  {id:43,topic:"Writing",sub:"Passage-Based: Grammar",
+  {id:43,topic:"English",sub:"Passage-Based: Grammar",
    passage:"While most comic book fans knew about Wonder Woman, few [A) realize / B) know / C) knows / D) realized] that she was just one of many great cartoon heroines of that era.",
    q:"Which verb best maintains tense consistency with the passage?",
    choices:["realize","know","knows","realized"],
    correct:3,exp:"The surrounding passage uses past tense ('fans knew'). 'Realized' maintains consistent past tense. Using 'realize' or 'know' would create an inconsistent shift to present tense."},
 
-  {id:44,topic:"Writing",sub:"Passage-Based: Grammar",
+  {id:44,topic:"English",sub:"Passage-Based: Grammar",
    passage:"[A) While its / B) Because its / C) Because their / D) While their] heyday was brief, these heroines inspired countless readers with their combination of bravery and beauty.",
    q:"Which option correctly identifies the pronoun and the contrast relationship?",
    choices:["While its","Because its","Because their","While their"],
    correct:3,exp:"Two issues: (1) The pronoun must match 'heroines' (plural) → 'their' not 'its.' (2) The relationship is contrast/concession (brief heyday despite inspiring readers) → 'While' not 'Because.' 'Because' would imply causation, not contrast."},
 
-  {id:45,topic:"Writing",sub:"Passage-Based: Grammar",
+  {id:45,topic:"English",sub:"Passage-Based: Grammar",
    passage:"In that early comic book era, there [A) weren't / B) wasn't / C) aren't / D) hadn't been] established rules about how female characters should behave.",
    q:"Which verb correctly agrees with the subject and maintains past tense?",
    choices:["weren't","wasn't","aren't","hadn't been"],
    correct:0,exp:"The subject is 'rules' (plural) → plural verb. The passage is in past tense → past tense verb. 'Weren't' (were not) is plural past tense. 'Wasn't' is singular past. 'Aren't' is plural present."},
 
-  {id:46,topic:"Writing",sub:"Passage-Based: Grammar",
+  {id:46,topic:"English",sub:"Passage-Based: Grammar",
    passage:"They were fearless [A) and unapologetic about / B) and unapologetic over / C), and unapologetic about / D), and unapologetic over] their strength.",
    q:"Which option is correct?",
    choices:["fearless and unapologetic about","fearless and unapologetic over","fearless, and unapologetic about","fearless, and unapologetic over"],
    correct:0,exp:"Two issues: (1) No comma before 'and' when joining only two adjectives ('fearless and unapologetic'). (2) The correct idiom is 'unapologetic ABOUT' something, not 'unapologetic OVER.'"},
 
-  {id:47,topic:"Writing",sub:"Passage-Based: Grammar",
+  {id:47,topic:"English",sub:"Passage-Based: Grammar",
    passage:"The portrayal of comic book heroines did not become widespread until [A) the 1950s, when / B) the 1950s: when / C) the 1950s, where / D) the 1950s, whereas] heroines like Batwoman were told that fighting crime was too dangerous for a female.",
    q:"Which option is correct?",
    choices:["the 1950s, when","the 1950s: when","the 1950s, where","the 1950s, whereas"],
    correct:0,exp:"'When' is the correct relative pronoun to refer to a time period ('the 1950s'). 'Where' refers to places. 'Whereas' signals contrast, which doesn't fit here. A colon before 'when' would be incorrect punctuation."},
 
-  {id:48,topic:"Writing",sub:"Passage-Based: Grammar",
+  {id:48,topic:"English",sub:"Passage-Based: Grammar",
    passage:"They could crack a joke one [A) minute, and a crooks jaw / B) minute and a crooks' jaw / C) minute and a crook's jaw / D) minute, or a crook's jaw] the next.",
    q:"Which option is correct?",
    choices:["minute, and a crooks jaw","minute and a crooks' jaw","minute and a crook's jaw","minute, or a crook's jaw"],
    correct:2,exp:"(1) 'Crook's jaw' — singular possessive: the jaw belonging to one crook. (2) No comma before 'and' joining two items in a parallel structure ('crack a joke... and a crook's jaw'). (3) 'Or' would change the meaning from addition to alternative."},
 
-  {id:49,topic:"Writing",sub:"Passage-Based: Grammar",
+  {id:49,topic:"English",sub:"Passage-Based: Grammar",
    passage:"It took the feminist movement of the 1970s to change the representation of women in comics and begin to return them to the way [A) it had / B) it was / C) they are / D) they had been] depicted 30 years earlier.",
    q:"Which pronoun-verb combination is correct?",
    choices:["it had been depicted","it was depicted","they are depicted","they had been depicted"],
    correct:3,exp:"The pronoun must match 'women' (plural) → 'they,' not 'it.' The action happened before another past action → past perfect 'had been depicted' is correct. 'They are' would be present tense, inconsistent with the passage."},
 
-  {id:50,topic:"Writing",sub:"Passage-Based: Grammar",
+  {id:50,topic:"English",sub:"Passage-Based: Grammar",
    passage:"While some comfort with mathematics is essential if you hope to balance a [A) company's / B) companys' / C) companies / D) companies'] ledger, management consulting firms are willing to hire students of almost any background.",
    q:"Which option is correct?",
    choices:["company's","companys'","companies","companies'"],
    correct:0,exp:"You're balancing one company's ledger — singular possessive. 'Company's' correctly adds 's to a singular noun. 'Companies'' would be plural possessive. 'Companys'' is not a real word."},
 
-  {id:51,topic:"Writing",sub:"Passage-Based: Grammar",
+  {id:51,topic:"English",sub:"Passage-Based: Grammar",
    passage:"What matters most is that you display strong critical thinking skills and an ability to think on [A) one's / B) ones' / C) your / D) their] feet.",
    q:"Which pronoun is most consistent with the surrounding sentence?",
    choices:["one's","ones'","your","their"],
    correct:2,exp:"The sentence directly addresses the reader ('you display strong... skills'). 'Your feet' is consistent with 'you' in the same sentence. 'One's' would require 'one' earlier in the sentence. 'Their' would introduce an inconsistent shift to third person."},
 
-  {id:52,topic:"Writing",sub:"Passage-Based: Grammar",
+  {id:52,topic:"English",sub:"Passage-Based: Grammar",
    passage:"Most management consulting firms [A) start to recruiting / B) start to recruit / C) start the recruitment of / D) start by recruiting] qualified candidates from top colleges in their Freshman and Sophomore years.",
    q:"Which option is idiomatically correct and most concise?",
    choices:["start to recruiting","start to recruit","start the recruitment of","start by recruiting"],
@@ -813,117 +813,117 @@ const ALL_QUESTIONS = [
    correct:1,exp:"The best SAT answer restates or summarizes what the passage explicitly says, requiring the fewest logical steps from the text. Adding information, making interpretations, or drawing conclusions that go beyond the passage are all wrong answer patterns."},
 
   // ── WRITING: MODIFIERS (8 questions) ────────────────────────────────────
-  {id:131,topic:"Writing",sub:"Modifiers",
+  {id:131,topic:"English",sub:"Modifiers",
    context:"The trousers were laid out [flatly / flat] upon the table.",
    q:"Which modifier correctly fills the bracket?",
    choices:["flatly","flat","flatten","flattening"],
    correct:1,exp:"'Flat' is an adjective describing the state of the trousers. 'Flatly' is an adverb that modifies verbs. Linking-type verbs and positional descriptions use adjectives, not adverbs."},
 
-  {id:132,topic:"Writing",sub:"Modifiers",
+  {id:132,topic:"English",sub:"Modifiers",
    context:"Castor oil tastes [awful / awfully].",
    q:"Which modifier correctly fills the bracket?",
    choices:["awful","awfully","more awful","awfully bad"],
    correct:0,exp:"'Tastes' is a linking verb (like is, feels, seems). Linking verbs are followed by adjectives, not adverbs. 'Castor oil tastes awful' — the adjective 'awful' describes the oil."},
 
-  {id:133,topic:"Writing",sub:"Modifiers",
+  {id:133,topic:"English",sub:"Modifiers",
    context:"Of the three candidates for the job, she is the [more / most] experienced.",
    q:"Which comparative form correctly fills the bracket?",
    choices:["more","most","much more","much most"],
    correct:1,exp:"When comparing THREE or more things, use the superlative ('most'). When comparing only TWO things, use the comparative ('more'). Three candidates → 'most experienced.'"},
 
-  {id:134,topic:"Writing",sub:"Modifiers",
+  {id:134,topic:"English",sub:"Modifiers",
    context:"They are both great hitters, but Omar is the [better / best] fielder of the two.",
    q:"Which comparative form correctly fills the bracket?",
    choices:["better","best","more better","most best"],
    correct:0,exp:"When comparing exactly TWO things, use the comparative ('better'). 'Of the two' confirms only two players are being compared. Three or more would require 'best.'"},
 
-  {id:135,topic:"Writing",sub:"Modifiers",
+  {id:135,topic:"English",sub:"Modifiers",
    context:"There are [fewer / less] people registered as independents than in previous elections.",
    q:"Which modifier correctly fills the bracket?",
    choices:["fewer","less","lesser","little"],
    correct:0,exp:"'Fewer' is used with countable nouns (people, apples, ideas). 'Less' is used with uncountable nouns (water, time, money). 'People' is countable → 'fewer.'"},
 
-  {id:136,topic:"Writing",sub:"Modifiers",
+  {id:136,topic:"English",sub:"Modifiers",
    context:"Running quickly in the winter air, my nose got cold.",
    q:"Which best corrects the misplaced modifier?",
    choices:["NO CHANGE","Running quickly in the winter air, the cold made my nose numb.","As I ran quickly in the winter air, my nose got cold.","My nose got cold, running quickly in the winter air."],
    correct:2,exp:"'Running quickly in the winter air' must describe the grammatical subject. The original incorrectly implies the nose was running. 'As I ran quickly in the winter air, my nose got cold' correctly places 'I' as the runner."},
 
-  {id:137,topic:"Writing",sub:"Modifiers",
+  {id:137,topic:"English",sub:"Modifiers",
    context:"Having finished my dinner, the waitress offered to bring out the dessert tray.",
    q:"Which best corrects the misplaced modifier?",
    choices:["NO CHANGE","After I finished my dinner, the waitress offered to bring out the dessert tray.","Having finished my dinner, the dessert tray was offered by the waitress.","The waitress, having finished my dinner, offered to bring out the dessert tray."],
    correct:1,exp:"'Having finished my dinner' must modify whoever ate dinner — the diner, not the waitress. Option B correctly identifies who did what."},
 
-  {id:138,topic:"Writing",sub:"Modifiers",
+  {id:138,topic:"English",sub:"Modifiers",
    context:"Two cars were reported stolen by the county sheriff yesterday.",
    q:"Which best corrects the ambiguous modifier?",
    choices:["NO CHANGE","Two cars were reported stolen yesterday by the county sheriff.","The county sheriff reported two cars stolen yesterday.","Yesterday, two stolen cars were reported by the county sheriff."],
    correct:2,exp:"The original is ambiguous — 'by the county sheriff' could mean the sheriff reported the theft OR stole the cars. Option C clearly states the sheriff is the one reporting."},
 
   // ── WRITING: PARALLELISM (6 questions) ──────────────────────────────────
-  {id:139,topic:"Writing",sub:"Parallelism",
+  {id:139,topic:"English",sub:"Parallelism",
    context:"I like to read books, watch movies, and to play video games.",
    q:"Which best corrects the parallelism error?",
    choices:["NO CHANGE","I like to read books, to watch movies, and to play video games.","I like reading books, watching movies, and to play video games.","I like to read books, watching movies, and playing video games."],
    correct:1,exp:"All three items must use the same form. 'To read, to watch, to play' — all infinitives ✓. Option A inconsistently omits 'to' before 'watch.'"},
 
-  {id:140,topic:"Writing",sub:"Parallelism",
+  {id:140,topic:"English",sub:"Parallelism",
    context:"Unlike the original statue, plastic was used to make the copy.",
    q:"Which best corrects the comparison error?",
    choices:["NO CHANGE","Unlike the original statue, the copy was made out of plastic.","Unlike the original statue, the making of the copy used plastic.","Plastic unlike the original statue was used to make the copy."],
    correct:1,exp:"The comparison must be between parallel items: original statue vs. copy. The original incorrectly compares 'the original statue' with 'plastic.' Option B correctly compares statue to copy."},
 
-  {id:141,topic:"Writing",sub:"Parallelism",
+  {id:141,topic:"English",sub:"Parallelism",
    context:"The cost of housing in New York City is far higher than Newark, New Jersey.",
    q:"Which best corrects the comparison error?",
    choices:["NO CHANGE","The cost of housing in New York City is far higher than that in Newark, New Jersey.","The cost of housing in New York City is far higher than in Newark, New Jersey's cost.","The cost in New York City's housing is far higher than Newark, New Jersey."],
    correct:1,exp:"You must compare the cost of housing in NYC to the cost of housing in Newark — not to Newark itself. 'Higher than that in Newark' uses 'that' as a pronoun for 'the cost of housing.'"},
 
-  {id:142,topic:"Writing",sub:"Parallelism",
+  {id:142,topic:"English",sub:"Parallelism",
    context:"The waitress not only brought the check but also a slice of birthday cake for my sister.",
    q:"Which is the correct parallel structure for 'not only... but also'?",
    choices:["NO CHANGE","The waitress brought not only the check but also a slice of birthday cake for my sister.","The waitress not only brought the check but a slice of birthday cake for my sister also.","Not only the check was brought by the waitress but also a slice of birthday cake."],
    correct:1,exp:"With 'not only... but also,' the verb must come before 'not only': 'brought not only X but also Y.' Both X and Y are noun phrases — parallel ✓."},
 
-  {id:143,topic:"Writing",sub:"Parallelism",
+  {id:143,topic:"English",sub:"Parallelism",
    context:"For dessert, you can choose between crème brûlée or chocolate mousse.",
    q:"Which best corrects the idiom error?",
    choices:["NO CHANGE","For dessert, you can choose between crème brûlée and chocolate mousse.","For dessert, you can choose crème brûlée or chocolate mousse.","For dessert, you can choose either crème brûlée nor chocolate mousse."],
    correct:1,exp:"'Between' must be paired with 'and,' not 'or.' The correct idiom is 'choose between A and B.' Option C ('choose A or B' without 'between') also works, but B directly corrects the idiom error."},
 
-  {id:144,topic:"Writing",sub:"Parallelism",
+  {id:144,topic:"English",sub:"Parallelism",
    context:"I avoided driving downtown although I knew there would be massive traffic jams.",
    q:"Is this sentence correct as written?",
    choices:["Yes — no error","No — 'although' should be 'because'","No — 'avoided' should be 'have avoided'","No — there should be a comma after 'downtown'"],
    correct:0,exp:"The sentence is correct as written. 'Although I knew there would be massive traffic jams' is a dependent clause correctly attached to the independent clause. 'Although' correctly signals a concession (she avoided it despite knowing). No error."},
 
   // ── WRITING: VERB TENSE (5 questions) ───────────────────────────────────
-  {id:145,topic:"Writing",sub:"Verb Tense",
+  {id:145,topic:"English",sub:"Verb Tense",
    context:"Whenever I go to the beach, I always [dipped / dip / will dip] my feet in the ocean.",
    q:"Which verb tense correctly fills the bracket?",
    choices:["dipped","dip","will dip","had dipped"],
    correct:1,exp:"'Whenever I go' establishes a habitual/recurring present action. 'Whenever I go... I dip' — both simple present tense for a habitual action. 'Dipped' is past; 'will dip' shifts to future."},
 
-  {id:146,topic:"Writing",sub:"Verb Tense",
+  {id:146,topic:"English",sub:"Verb Tense",
    context:"I [did not see / have not seen] him since he left the party.",
    q:"Which verb tense correctly fills the bracket?",
    choices:["did not see","have not seen","had not seen","will not have seen"],
    correct:1,exp:"'Since' signals an action begun in the past that continues to the present — present perfect ('have not seen'). 'Did not see' would indicate a completed past action at a specific time."},
 
-  {id:147,topic:"Writing",sub:"Verb Tense",
+  {id:147,topic:"English",sub:"Verb Tense",
    context:"By that time, he already [confessed / had confessed / has confessed] to the police.",
    q:"Which verb tense correctly fills the bracket?",
    choices:["confessed","had confessed","has confessed","would confess"],
    correct:1,exp:"'By that time' signals past perfect — an action completed before another past moment. 'Had confessed' shows it happened before 'that time.' 'Has confessed' is present perfect (incorrect here)."},
 
-  {id:148,topic:"Writing",sub:"Verb Tense",
+  {id:148,topic:"English",sub:"Verb Tense",
    context:"Because of his hectic schedule, which [included / includes / had included] organizing the March on Washington, Dr. King didn't begin drafting until 12 hours before his speech.",
    q:"Which verb tense maintains consistency with the passage's past tense?",
    choices:["included","includes","had included","would include"],
    correct:0,exp:"The passage is in past tense ('didn't begin drafting'). The relative clause should use simple past: 'which included.' 'Includes' (present) creates an inconsistent tense shift."},
 
-  {id:149,topic:"Writing",sub:"Idioms",
+  {id:149,topic:"English",sub:"Idioms",
    context:"Poor Zeppo was often regarded as the [less / least] talented of the Marx brothers.",
    q:"Which comparative form correctly fills the bracket?",
    choices:["less","least","lesser","more less"],
@@ -1148,6 +1148,314 @@ const ALL_QUESTIONS = [
    q:"Why does the author begin with the scholarly assessment?",
    choices:["To argue that scholars are always right","To establish the speech's significance before detailing how it came to be","To contrast the speech's fame with its humble origins","To persuade the reader to study American history"],
    correct:1,exp:"Opening with the scholarly consensus immediately establishes why the behind-the-scenes details matter — the speech is historically monumental, so readers understand the stakes."},
+
+  // ── ENGLISH: PASSAGE-BASED (ACT-format, underlined-portion style) ────────
+  {id:191,topic:"English",sub:"Passage-Based: Grammar",
+   passage:"Marie Tharp, a geologist working at Columbia University, found a way around this restriction: she analyzed data that other scientists had collected.",
+   q:"Which choice best maintains the punctuation pattern of a nonessential appositive phrase?",
+   choices:["NO CHANGE","Marie Tharp a geologist working at Columbia University, found","Marie Tharp, a geologist working at Columbia University found","Marie Tharp; a geologist working at Columbia University; found"],
+   correct:0,exp:"The phrase 'a geologist working at Columbia University' is a nonessential appositive — it must be set off by commas on both sides, as in the original. Removing either comma, or replacing the commas with semicolons, breaks the appositive pattern."},
+
+  {id:192,topic:"English",sub:"Passage-Based: Grammar",
+   passage:"Tharp spent years plotting depth soundings by hand, transferring rows of numbers into profiles that, when assembled together, revealed an enormous mountain range running down the middle of the Atlantic Ocean.",
+   q:"Which choice is most consistent with the verb tense and parallel structure used elsewhere in the sentence?",
+   choices:["NO CHANGE","plotted depth soundings by hand, transferred","plotting depth soundings by hand, transfers","plot depth soundings by hand, transferring"],
+   correct:0,exp:"'Spent years plotting... transferring' uses two parallel -ing verb forms following 'spent years.' This is the correct, idiomatic construction; the other options break the parallel -ing pattern."},
+
+  {id:193,topic:"English",sub:"Passage-Based: Grammar",
+   passage:"At the center of this range, she noticed a deep notch, a rift valley, that closely resembled features geologists associated with continental drift, a theory still considered fringe science at the time.",
+   q:"Which choice provides the clearest and most concise way to introduce the appositive 'a rift valley'?",
+   choices:["NO CHANGE","a deep notch (which was a rift valley)","a deep notch, which is known as a rift valley,","a deep notch that is sometimes called by some people a rift valley,"],
+   correct:0,exp:"The original is already concise and correctly punctuated. Option C is wordier without adding clarity, and option D is needlessly redundant ('sometimes called by some people')."},
+
+  {id:194,topic:"English",sub:"Redundancy",
+   passage:"Tharp persisted, cross-referencing her data with earthquake records that were also additionally used to confirm seismic activity along the rift.",
+   q:"Which choice eliminates the redundancy in this sentence?",
+   choices:["NO CHANGE","that were also used to additionally confirm","that were used to confirm","that were additionally also used for confirming"],
+   correct:2,exp:"'Also' and 'additionally' mean the same thing, so using both is redundant. 'That were used to confirm' removes the redundancy while keeping the meaning intact — a classic ACT concision fix."},
+
+  {id:195,topic:"English",sub:"Punctuation",
+   passage:"When Tharp shared her findings with her research partner, Bruce Heezen, he dismissed the rift valley as girl talk, refusing even to plot it on early versions of the map.",
+   q:"Which choice correctly punctuates the quoted phrase?",
+   choices:["NO CHANGE","as \"girl talk\" refusing","as \"girl talk,\" refusing","as \"girl talk\", refusing"],
+   correct:2,exp:"In standard American English, commas are placed inside closing quotation marks. 'As \"girl talk,\" refusing' correctly quotes the phrase and places the comma inside the quotation marks."},
+
+  {id:196,topic:"English",sub:"Apostrophes",
+   passage:"Heezen eventually came around, and the two published a map in 1977 that gave the public its first detailed look at the ocean floor.",
+   q:"Which choice is correct?",
+   choices:["NO CHANGE","it's first detailed look","its' first detailed look","their first detailed look"],
+   correct:0,exp:"'Its' is the possessive pronoun referring to 'the public' (singular) — no apostrophe needed. 'It's' means 'it is,' and 'its'' is not a word."},
+
+  {id:197,topic:"English",sub:"Punctuation",
+   passage:"Tharp's map didn't just settle an academic argument, it helped confirm the theory of plate tectonics, transforming how scientists understood the very structure of the Earth.",
+   q:"Which choice fixes the comma splice in this sentence?",
+   choices:["NO CHANGE","argument; it helped confirm","argument it helped confirm","argument, but, it helped confirm"],
+   correct:1,exp:"The original joins two independent clauses with only a comma — a comma splice. A semicolon correctly joins these two closely related complete sentences."},
+
+  {id:198,topic:"English",sub:"Transitions",
+   passage:"Tharp cross-referenced her data with earthquake records, which confirmed that the rift valley aligned precisely with seismic activity. ___, Heezen remained skeptical and refused to plot the feature.",
+   q:"Which transition best fits the blank, given that Heezen's skepticism contrasts with the confirming evidence Tharp had found?",
+   choices:["Therefore","Similarly","Nevertheless","As a result"],
+   correct:2,exp:"'Nevertheless' signals contrast — despite the confirming seismic evidence, Heezen still doubted the finding. 'Therefore' and 'as a result' would incorrectly suggest the evidence caused his skepticism."},
+
+  {id:199,topic:"English",sub:"Punctuation",
+   passage:"The rift valley that Tharp identified closely matched a pattern geologists would later confirm using satellite data.",
+   q:"Is the underlined portion ('that Tharp identified') punctuated correctly?",
+   choices:["Yes, because the clause is essential to identifying which rift valley is meant","No, because the clause should be set off with commas","No, because 'that' should be replaced with a comma","Yes, but only if a comma is added after 'Tharp'"],
+   correct:0,exp:"'That Tharp identified' is a restrictive clause — it specifies which rift valley is meant and cannot be removed without changing the sentence's meaning. Restrictive clauses are not set off by commas."},
+
+  {id:200,topic:"English",sub:"Word Choice",
+   passage:"Tharp's painstaking analysis ultimately helped confirm a theory that reshaped modern geology.",
+   q:"Which choice is most precise and idiomatic in context?",
+   choices:["helped confirm","assisted to confirm","supported toward confirming","contributed for confirming"],
+   correct:0,exp:"'Helped confirm' is the idiomatic, concise construction. The other options use awkward or nonstandard prepositions ('assisted to,' 'supported toward,' 'contributed for')."},
+
+  {id:201,topic:"English",sub:"Parallelism",
+   passage:"Tharp's work required patience, precision, and she needed to pay great attention to detail.",
+   q:"Which choice is most consistent with the parallel structure of the sentence?",
+   choices:["NO CHANGE","and a great attention to detail","and great attentiveness to detail","and she had to be very detail-oriented"],
+   correct:2,exp:"The sentence lists three qualities Tharp's work required: 'patience, precision, and ___.' To maintain parallel structure, the third item should be a noun phrase like the first two. 'Great attentiveness to detail' matches this pattern; the other options break parallelism."},
+
+  {id:202,topic:"English",sub:"Modifiers",
+   passage:"Working late into the night, the rift valley was finally plotted by Tharp on the map.",
+   q:"Which choice corrects the misplaced modifier in this sentence?",
+   choices:["NO CHANGE","the rift valley, working late into the night, was finally plotted by Tharp","working late into the night, Tharp finally plotted the rift valley on the map","the map finally had the rift valley plotted by Tharp, working late into the night"],
+   correct:2,exp:"'Working late into the night' must modify the person doing the work — Tharp — not 'the rift valley.' Option C correctly places 'Tharp' as the subject immediately following the modifying phrase."},
+
+  {id:203,topic:"English",sub:"Passage-Based: Rhetoric",
+   passage:"[1] In the 1950s, the field of oceanography was dominated almost entirely by men, and women were rarely permitted on research vessels at sea. Marie Tharp, a geologist working at Columbia University, found a way around this restriction: she analyzed data that other scientists had collected, mapping out for the first time the hidden contours of the ocean floor.\n\n[2] Tharp spent years plotting depth soundings by hand, eventually revealing an enormous mountain range running down the middle of the Atlantic Ocean.\n\n[3] When Tharp shared her findings with her research partner, Bruce Heezen, he initially dismissed her rift valley as \"girl talk.\"\n\n[4] Tharp persisted, and earthquake records eventually confirmed her theory. Heezen came around, and the two published a map in 1977 that gave the public its first detailed look at the ocean floor.",
+   q:"Suppose the writer's main purpose had been to explain the technical process of depth-sounding measurement. Would this essay accomplish that purpose?",
+   choices:["Yes, because it describes how Tharp transferred numbers into profiles.","Yes, because it explains how sound waves measure ocean depth.","No, because the essay instead focuses on Tharp's struggle for recognition and her scientific breakthrough.","No, because the essay only discusses Heezen's role in the discovery."],
+   correct:2,exp:"The essay centers on Tharp's personal and professional struggle to have her discovery taken seriously, and the broader significance of her finding — not on the technical mechanics of depth-sounding equipment."},
+
+  {id:204,topic:"English",sub:"Passage-Based: Rhetoric",
+   passage:"[1] In the 1950s, the field of oceanography was dominated almost entirely by men, and women were rarely permitted on research vessels at sea. Marie Tharp, a geologist working at Columbia University, found a way around this restriction: she analyzed data that other scientists had collected, mapping out for the first time the hidden contours of the ocean floor.\n\n[2] Tharp spent years plotting depth soundings by hand, eventually revealing an enormous mountain range running down the middle of the Atlantic Ocean.\n\n[3] When Tharp shared her findings with her research partner, Bruce Heezen, he initially dismissed her rift valley as \"girl talk.\"\n\n[4] Tharp persisted, and earthquake records eventually confirmed her theory. Heezen came around, and the two published a map in 1977 that gave the public its first detailed look at the ocean floor.",
+   q:"The writer is considering adding the following true sentence to Paragraph 4: 'Their map helped confirm the theory of plate tectonics.' Should the writer make this addition?",
+   choices:["Yes, because it specifies a major scientific consequence of Tharp and Heezen's published map.","Yes, because it explains why Heezen initially doubted Tharp's findings.","No, because it contradicts the claim that the map was published in 1977.","No, because the essay has already fully explained the theory of plate tectonics."],
+   correct:0,exp:"This addition would strengthen Paragraph 4 by clarifying the broader scientific significance of the map's publication, directly following the mention of the 1977 publication."},
+
+  // ── MATH: ACT-FORMAT (5-choice) ADDITIONS ────────────────────────────────
+  {id:220,topic:"Math",sub:"Matrices",
+   q:"What is the value of x if the determinant of the matrix with first row (2, x) and second row (1, 4) equals 5? (Recall: for a 2×2 matrix with rows (a,b) and (c,d), the determinant is ad − bc.)",
+   choices:["−3","1","3","5","8"],
+   correct:2,exp:"Determinant = (2)(4) − (x)(1) = 8 − x. Set equal to 5: 8 − x = 5 → x = 3."},
+
+  {id:221,topic:"Math",sub:"Logarithms",
+   q:"If log₂(x) = 5, what is the value of x?",
+   choices:["10","16","25","32","64"],
+   correct:3,exp:"By the definition of a logarithm, log₂(x) = 5 means 2⁵ = x. So x = 32."},
+
+  {id:222,topic:"Math",sub:"Logarithms",
+   q:"What is the value of log₅(125)?",
+   choices:["1","2","3","4","5"],
+   correct:2,exp:"log₅(125) asks: 5 to what power equals 125? Since 5³ = 125, log₅(125) = 3."},
+
+  {id:223,topic:"Math",sub:"Complex Numbers",
+   q:"For i = √−1, what is the value of i⁶?",
+   choices:["−i","−1","0","1","i"],
+   correct:1,exp:"Powers of i cycle every 4: i¹=i, i²=−1, i³=−i, i⁴=1. So i⁶ = i⁴ · i² = 1 · (−1) = −1."},
+
+  {id:224,topic:"Math",sub:"Complex Numbers",
+   q:"What is the value of (3 + 2i)(1 − i), for i = √−1?",
+   choices:["5 − i","5 + i","1 − i","1 + 5i","5 − 5i"],
+   correct:0,exp:"FOIL: 3(1) + 3(−i) + 2i(1) + 2i(−i) = 3 − 3i + 2i − 2i². Since i² = −1: 3 − i − 2(−1) = 3 − i + 2 = 5 − i."},
+
+  {id:225,topic:"Math",sub:"Sequences",
+   q:"The first term of an arithmetic sequence is 7, and the common difference is 4. What is the 10th term?",
+   choices:["36","39","40","43","47"],
+   correct:3,exp:"aₙ = a₁ + (n−1)d = 7 + (9)(4) = 7 + 36 = 43."},
+
+  {id:226,topic:"Math",sub:"Sequences",
+   q:"In a geometric sequence, the first term is 3 and the common ratio is 2. What is the 5th term?",
+   choices:["24","32","40","48","96"],
+   correct:3,exp:"aₙ = a₁ · r^(n−1) = 3 · 2⁴ = 3 · 16 = 48."},
+
+  {id:227,topic:"Math",sub:"Probability",
+   q:"A bag contains 4 red, 3 blue, and 5 green marbles. What is the probability of drawing a blue marble at random?",
+   choices:["1/12","1/5","1/4","1/3","5/12"],
+   correct:2,exp:"Total marbles = 4 + 3 + 5 = 12. P(blue) = 3/12 = 1/4."},
+
+  {id:228,topic:"Math",sub:"Probability",
+   q:"How many different 3-letter arrangements can be made from the letters in the word MATH if no letter is repeated?",
+   choices:["4","6","12","24","64"],
+   correct:3,exp:"This is a permutation of 4 letters taken 3 at a time: ₄P₃ = 4!/(4−3)! = 4·3·2 = 24."},
+
+  {id:229,topic:"Math",sub:"Sequences",
+   q:"A theater's seating arrangement increases by 6 seats with each row back from the stage, with the first row having 14 seats. How many seats are in the 12th row?",
+   choices:["62","68","74","80","86"],
+   correct:3,exp:"aₙ = a₁ + (n−1)d = 14 + (11)(6) = 14 + 66 = 80."},
+
+  // ── SCIENCE: DATA REPRESENTATION — Reaction Rate vs. Temperature ────────
+  {id:300,topic:"Science",sub:"Interpretation of Data",
+   passage:"Students measured the rate of a chemical reaction (in mL of gas produced per minute) at five different temperatures. Temperature (°C): 10, 20, 30, 40, 50. Reaction Rate (mL O₂/min): 2, 4, 9, 18, 35.",
+   q:"According to the data, the reaction rate at 30°C was closest to:",
+   choices:["4 mL/min","7 mL/min","9 mL/min","12 mL/min"],
+   correct:2,exp:"Reading directly from the data table, the reaction rate at 30°C is listed as 9 mL O₂/min."},
+
+  {id:301,topic:"Science",sub:"Interpretation of Data",
+   passage:"Students measured the rate of a chemical reaction (in mL of gas produced per minute) at five different temperatures. Temperature (°C): 10, 20, 30, 40, 50. Reaction Rate (mL O₂/min): 2, 4, 9, 18, 35.",
+   q:"Based on the data, as temperature increased from 10°C to 50°C, the reaction rate:",
+   choices:["increased only","decreased only","increased then decreased","stayed constant"],
+   correct:0,exp:"The reaction rate rose steadily at every recorded temperature (2 → 4 → 9 → 18 → 35), so it increased only across the full range tested."},
+
+  {id:302,topic:"Science",sub:"Interpretation of Data",
+   passage:"Students measured the rate of a chemical reaction (in mL of gas produced per minute) at five different temperatures. Temperature (°C): 10, 20, 30, 40, 50. Reaction Rate (mL O₂/min): 2, 4, 9, 18, 35.",
+   q:"Based on the trend shown, if the reaction were run at 60°C, the reaction rate would most likely be:",
+   choices:["less than 18 mL/min","between 18 and 35 mL/min","greater than 35 mL/min","exactly 35 mL/min"],
+   correct:2,exp:"The rate accelerates with each 10°C increase (the gain from 40°C to 50°C alone was 17 mL/min). Continuing this accelerating trend, the rate at 60°C would most likely exceed 35 mL/min."},
+
+  {id:303,topic:"Science",sub:"Interpretation of Data",
+   passage:"Students measured the rate of a chemical reaction (in mL of gas produced per minute) at five different temperatures. Temperature (°C): 10, 20, 30, 40, 50. Reaction Rate (mL O₂/min): 2, 4, 9, 18, 35.",
+   q:"What is the positive difference in reaction rate between 20°C and 40°C?",
+   choices:["9 mL/min","11 mL/min","14 mL/min","16 mL/min"],
+   correct:2,exp:"At 40°C the rate was 18 mL/min; at 20°C it was 4 mL/min. 18 − 4 = 14 mL/min."},
+
+  {id:304,topic:"Science",sub:"Scientific Investigation",
+   passage:"Students measured the rate of a chemical reaction (in mL of gas produced per minute) at five different temperatures, keeping reactant concentrations constant across all trials.",
+   q:"In this experiment, temperature was the:",
+   choices:["dependent variable","independent variable","control variable","constant"],
+   correct:1,exp:"Temperature was deliberately changed by the researchers across trials to observe its effect on reaction rate — this makes it the independent variable. Reaction rate, which responded to the change, was the dependent variable."},
+
+  {id:305,topic:"Science",sub:"Scientific Investigation",
+   passage:"Students measured the rate of a chemical reaction (in mL of gas produced per minute) at five different temperatures, keeping reactant concentrations constant across all trials.",
+   q:"Which of the following would most likely have been held constant across all 5 trials?",
+   choices:["the concentration of reactants","the temperature","the reaction rate","the time elapsed during data collection"],
+   correct:0,exp:"For temperature's effect on reaction rate to be tested fairly, other factors that could affect rate — like reactant concentration — must be held constant across trials."},
+
+  {id:306,topic:"Science",sub:"Evaluation of Models",
+   passage:"Reaction Rate (mL O₂/min) at 10°C and 20°C: 2 and 4, respectively.",
+   q:"A student claims that the reaction rate doubles for every 10°C increase. Do the data between 10°C and 20°C support this claim?",
+   choices:["Yes; the rate went from 2 to 4 mL/min, which is a doubling.","No; the rate only increased by 2 mL/min, not a doubling.","Yes; the rate tripled over that interval.","No; the rate decreased over that interval."],
+   correct:0,exp:"2 mL/min doubled is 4 mL/min, which matches the recorded rate at 20°C — so the data support the claim for this particular interval (though the rate does not continue doubling at every subsequent 10°C step)."},
+
+  // ── SCIENCE: RESEARCH SUMMARY — Light Color and Bean Plant Growth ───────
+  {id:307,topic:"Science",sub:"Interpretation of Data",
+   passage:"Researchers grew bean plants under four light colors for 14 days, measuring average plant height. Experiment 1 (12 hrs light/day): White 18 cm, Red 22 cm, Blue 15 cm, Green 6 cm. Experiment 2 (16 hrs light/day): White 24 cm, Red 29 cm, Blue 20 cm, Green 8 cm.",
+   q:"According to Experiment 1, which light color produced the tallest plants?",
+   choices:["White","Red","Blue","Green"],
+   correct:1,exp:"In Experiment 1, plants grown under red light reached 22 cm — taller than white (18 cm), blue (15 cm), or green (6 cm)."},
+
+  {id:308,topic:"Science",sub:"Interpretation of Data",
+   passage:"Researchers grew bean plants under four light colors for 14 days, measuring average plant height. Experiment 1 (12 hrs light/day): White 18 cm, Red 22 cm, Blue 15 cm, Green 6 cm. Experiment 2 (16 hrs light/day): White 24 cm, Red 29 cm, Blue 20 cm, Green 8 cm.",
+   q:"Based on both experiments, which light color was least effective for plant growth?",
+   choices:["White","Red","Blue","Green"],
+   correct:3,exp:"Green light produced the shortest plants in both Experiment 1 (6 cm) and Experiment 2 (8 cm), making it the least effective light color tested."},
+
+  {id:309,topic:"Science",sub:"Interpretation of Data",
+   passage:"Researchers grew bean plants under four light colors for 14 days, measuring average plant height. Experiment 1 (12 hrs light/day): White 18 cm, Red 22 cm, Blue 15 cm, Green 6 cm. Experiment 2 (16 hrs light/day): White 24 cm, Red 29 cm, Blue 20 cm, Green 8 cm.",
+   q:"Comparing Experiment 1 and Experiment 2, increasing light exposure from 12 to 16 hours per day had what effect on plant height under red light?",
+   choices:["decreased height by 7 cm","increased height by 5 cm","increased height by 7 cm","had no effect on height"],
+   correct:2,exp:"Under red light, height rose from 22 cm (Experiment 1) to 29 cm (Experiment 2), an increase of 7 cm."},
+
+  {id:310,topic:"Science",sub:"Scientific Investigation",
+   passage:"Researchers grew bean plants under four light colors for 14 days. Experiment 1 used 12 hours of light per day; Experiment 2 repeated the same light colors but used 16 hours of light per day.",
+   q:"Which of the following was the variable that differed between Experiment 1 and Experiment 2?",
+   choices:["the color of light used","the number of hours of light exposure per day","the species of plant used","the type of soil used"],
+   correct:1,exp:"Both experiments tested the same four light colors; what changed between them was the number of hours of light exposure each day (12 hrs vs. 16 hrs)."},
+
+  {id:311,topic:"Science",sub:"Evaluation of Models",
+   passage:"Researchers grew bean plants under four light colors for 14 days, measuring average plant height. Experiment 1 (12 hrs light/day): White 18 cm, Red 22 cm, Blue 15 cm, Green 6 cm. Experiment 2 (16 hrs light/day): White 24 cm, Red 29 cm, Blue 20 cm, Green 8 cm.",
+   q:"A student hypothesizes that plants need light in the green wavelength range to grow taller than under any other light color. Do the results support this hypothesis?",
+   choices:["Yes; green light produced the second-tallest plants in both experiments.","No; green light produced the shortest plants in both experiments.","Yes; green light plants grew fastest overall.","Cannot be determined from the data given."],
+   correct:1,exp:"In both experiments, plants grown under green light were the shortest of the four groups tested — directly contradicting the hypothesis that green light promotes the most growth."},
+
+  {id:312,topic:"Science",sub:"Interpretation of Data",
+   passage:"Researchers grew bean plants under four light colors for 14 days, measuring average plant height. Experiment 1 (12 hrs light/day) red light: 22 cm. Experiment 2 (16 hrs light/day) red light: 29 cm.",
+   q:"If a third experiment tested 20 hours of light per day under red light, based on the trend across Experiments 1 and 2, plant height would most likely be:",
+   choices:["less than 22 cm","between 22 and 29 cm","greater than 29 cm","exactly 29 cm"],
+   correct:2,exp:"Plant height under red light increased as light exposure increased (22 cm at 12 hrs, 29 cm at 16 hrs). Continuing this upward trend, height at 20 hrs would most likely exceed 29 cm."},
+
+  {id:313,topic:"Science",sub:"Scientific Investigation",
+   passage:"Experiment 1 tested white, red, blue, and green light at 12 hours per day. Experiment 2 repeated the same light colors at 16 hours per day.",
+   q:"Which light colors were tested in both experiments?",
+   choices:["white and red only","blue and green only","white, red, blue, and green","red only"],
+   correct:2,exp:"The passage states Experiment 2 'repeated the same light colors' as Experiment 1, which tested white, red, blue, and green."},
+
+  // ── SCIENCE: CONFLICTING VIEWPOINTS — Younger Dryas Cooling Event ───────
+  {id:314,topic:"Science",sub:"Evaluation of Models",
+   passage:"About 12,800 years ago, Earth's climate abruptly cooled for roughly 1,200 years (the Younger Dryas). Scientist 1: A swarm of comet fragments struck North America, igniting wildfires and throwing soot and dust into the atmosphere, blocking sunlight and disrupting ocean circulation. Evidence includes a layer of tiny diamonds and elevated platinum at North American sites from that period. Scientist 2: A pulse of fresh meltwater from the collapsing Laurentide ice sheet flowed into the North Atlantic, disrupting deep-water ocean circulation that normally carries warm water northward. Evidence includes geological deposits showing a sudden redirection of meltwater drainage at the start of the cooling period.",
+   q:"According to Scientist 1, the cooling was triggered primarily by:",
+   choices:["meltwater disrupting ocean circulation","debris from a comet blocking sunlight","volcanic eruptions","a sudden ice age unrelated to any external event"],
+   correct:1,exp:"Scientist 1 attributes the cooling to comet debris (soot and dust) blocking sunlight and triggering a chain reaction, not to meltwater."},
+
+  {id:315,topic:"Science",sub:"Evaluation of Models",
+   passage:"About 12,800 years ago, Earth's climate abruptly cooled for roughly 1,200 years (the Younger Dryas). Scientist 1: A swarm of comet fragments struck North America, igniting wildfires and throwing soot and dust into the atmosphere, blocking sunlight and disrupting ocean circulation. Evidence includes a layer of tiny diamonds and elevated platinum at North American sites from that period. Scientist 2: A pulse of fresh meltwater from the collapsing Laurentide ice sheet flowed into the North Atlantic, disrupting deep-water ocean circulation that normally carries warm water northward. Evidence includes geological deposits showing a sudden redirection of meltwater drainage at the start of the cooling period.",
+   q:"According to Scientist 2, the cooling was triggered primarily by:",
+   choices:["a comet impact","a meltwater pulse disrupting ocean circulation","increased solar activity","a meteor shower"],
+   correct:1,exp:"Scientist 2 attributes the cooling to a pulse of fresh meltwater disrupting the ocean's deep-water circulation system."},
+
+  {id:316,topic:"Science",sub:"Evaluation of Models",
+   passage:"Scientist 1 describes comet debris triggering wildfires and 'disrupting ocean circulation patterns' as part of a chain reaction. Scientist 2 describes a meltwater pulse 'disrupting deep-water ocean circulation' directly.",
+   q:"Both scientists would most likely agree that:",
+   choices:["ocean circulation patterns played some role in the cooling event","a comet caused the event","the cooling lasted less than 100 years","volcanic ash was the main cause of the cooling"],
+   correct:0,exp:"Both explanations reference disrupted ocean circulation as part of the cooling mechanism, even though they disagree about what triggered that disruption."},
+
+  {id:317,topic:"Science",sub:"Evaluation of Models",
+   passage:"Evidence for Scientist 1 includes a layer of tiny diamonds and elevated platinum at North American sites from the period. Evidence for Scientist 2 includes geological deposits showing a sudden redirection of meltwater drainage at the start of the cooling period.",
+   q:"Which piece of evidence would most directly support Scientist 1's hypothesis over Scientist 2's?",
+   choices:["geological deposits showing redirected meltwater drainage","a layer of tiny diamonds and elevated platinum at sites across North America","records of gradual ocean temperature change","ice core samples showing steady CO₂ levels"],
+   correct:1,exp:"Tiny diamonds and elevated platinum are cited specifically as evidence for a comet impact (Scientist 1), not for a meltwater pulse."},
+
+  {id:318,topic:"Science",sub:"Evaluation of Models",
+   passage:"Evidence for Scientist 1 includes a layer of tiny diamonds and elevated platinum at North American sites from the period. Evidence for Scientist 2 includes geological deposits showing a sudden redirection of meltwater drainage at the start of the cooling period.",
+   q:"Which piece of evidence would most directly support Scientist 2's hypothesis over Scientist 1's?",
+   choices:["tiny diamonds in sediment layers","elevated platinum levels at impact sites","a sudden redirection of meltwater drainage at the start of the cooling period","soot deposits from regional wildfires"],
+   correct:2,exp:"A sudden redirection of meltwater drainage is the evidence specifically cited in support of Scientist 2's meltwater-pulse hypothesis."},
+
+  {id:319,topic:"Science",sub:"Evaluation of Models",
+   passage:"Scientist 1's hypothesis depends on evidence of a layer of tiny diamonds and elevated platinum at North American sites dating to the start of the Younger Dryas.",
+   q:"Suppose new evidence showed no unusual platinum or diamond deposits anywhere in North America. This finding would:",
+   choices:["support Scientist 1's hypothesis","support Scientist 2's hypothesis over Scientist 1's","support both scientists equally","be irrelevant to either hypothesis"],
+   correct:1,exp:"Since the diamond/platinum layer is Scientist 1's key evidence, its absence would weaken Scientist 1's case and, by comparison, lend relative support to Scientist 2's alternative explanation."},
+
+  {id:320,topic:"Science",sub:"Evaluation of Models",
+   passage:"Scientist 1 attributes the Younger Dryas cooling to comet debris blocking sunlight. Scientist 2 attributes it to a meltwater pulse disrupting ocean circulation.",
+   q:"The two scientists disagree mainly about:",
+   choices:["whether the Younger Dryas cooling event occurred","the immediate trigger that disrupted ocean circulation","how long the cooling period lasted","whether Earth's climate can change rapidly"],
+   correct:1,exp:"Both scientists agree the Younger Dryas occurred and that disrupted ocean circulation was involved; they disagree specifically about what triggered that disruption — a comet impact versus a meltwater pulse."},
+
+  // ── SCIENCE: DATA REPRESENTATION — Fish Population Density ──────────────
+  {id:321,topic:"Science",sub:"Interpretation of Data",
+   passage:"Biologists recorded population density (fish/acre) of two species in Clearwater Lake from 2018-2023. Bluegill: 40, 55, 65, 60, 50, 45. Crappie: 20, 25, 35, 55, 60, 70.",
+   q:"According to the data, in which year did Bluegill population density reach its highest value?",
+   choices:["2019","2020","2021","2022"],
+   correct:1,exp:"Bluegill density peaked at 65 fish/acre in 2020, higher than any other year listed."},
+
+  {id:322,topic:"Science",sub:"Interpretation of Data",
+   passage:"Biologists recorded population density (fish/acre) of two species in Clearwater Lake from 2018-2023. Bluegill: 40, 55, 65, 60, 50, 45. Crappie: 20, 25, 35, 55, 60, 70.",
+   q:"Based on the data, between 2020 and 2023, the Crappie population density:",
+   choices:["increased only","decreased only","increased then leveled off","remained constant"],
+   correct:0,exp:"From 2020 to 2023, Crappie density rose every year (35 → 55 → 60 → 70), so it increased only over that span."},
+
+  {id:323,topic:"Science",sub:"Interpretation of Data",
+   passage:"Biologists recorded population density (fish/acre) of two species in Clearwater Lake from 2018-2023. Bluegill: 40, 55, 65, 60, 50, 45. Crappie: 20, 25, 35, 55, 60, 70.",
+   q:"In which year did the two species have the most nearly equal population densities?",
+   choices:["2018","2020","2021","2023"],
+   correct:2,exp:"In 2021, Bluegill was 60 fish/acre and Crappie was 55 fish/acre — a difference of only 5, smaller than the gap in any other listed year."},
+
+  {id:324,topic:"Science",sub:"Interpretation of Data",
+   passage:"Biologists recorded population density (fish/acre) of two species in Clearwater Lake from 2018-2023. Bluegill: 40, 55, 65, 60, 50, 45. Crappie: 20, 25, 35, 55, 60, 70.",
+   q:"What was the total combined population density of both species in 2019?",
+   choices:["75 fish/acre","80 fish/acre","85 fish/acre","90 fish/acre"],
+   correct:1,exp:"In 2019, Bluegill was 55 fish/acre and Crappie was 25 fish/acre. 55 + 25 = 80 fish/acre."},
+
+  {id:325,topic:"Science",sub:"Interpretation of Data",
+   passage:"Biologists recorded population density (fish/acre) of two species in Clearwater Lake from 2018-2023. Bluegill: 40, 55, 65, 60, 50, 45.",
+   q:"Which of the following best describes the overall trend in Bluegill population density from 2018 to 2023?",
+   choices:["increased steadily throughout","increased, then decreased","decreased steadily throughout","remained roughly constant"],
+   correct:1,exp:"Bluegill density rose from 40 to a peak of 65 in 2020, then declined to 45 by 2023 — an increase followed by a decrease."},
+
+  {id:326,topic:"Science",sub:"Evaluation of Models",
+   passage:"Bluegill density peaked in 2020 (65 fish/acre) and declined afterward, while Crappie density rose steadily throughout the same period (2018-2023: 20, 25, 35, 55, 60, 70).",
+   q:"Based on the trends shown, this data is most consistent with which of the following explanations?",
+   choices:["the two species do not interact in this lake","Crappie may be outcompeting Bluegill for resources over time","Bluegill population is unaffected by Crappie","both species are increasing at the same rate"],
+   correct:1,exp:"As Crappie density climbed, Bluegill density declined from its peak — a pattern consistent with the two species competing for shared, limited resources."},
+
+  {id:327,topic:"Science",sub:"Interpretation of Data",
+   passage:"Crappie population density (fish/acre) by year, 2020-2023: 35, 55, 60, 70.",
+   q:"If the trend from 2020-2023 continued, the Crappie population density in 2024 would most likely be:",
+   choices:["less than 60 fish/acre","between 60 and 70 fish/acre","greater than 70 fish/acre","exactly 70 fish/acre"],
+   correct:2,exp:"Crappie density has risen every year in this span, with the most recent gain (60 → 70) being 10 fish/acre. Continuing this trend, 2024 would most likely exceed 70 fish/acre."},
 ];
 
 const ALL_VOCAB = [
@@ -1266,17 +1574,17 @@ let state = {
   phase: 'quiz',
   quiz: { qs: [], idx: 0, answered: {}, correct: 0, wrong: 0 },
   fc: { cards: [], idx: 0, flipped: false },
-  history: JSON.parse(localStorage.getItem('sat_history') || '{"correct":0,"wrong":0,"byTopic":{}}'),
-  progress: JSON.parse(localStorage.getItem('sat_progress') || '{"quizzesTaken":0,"totalCorrect":0,"totalWrong":0}'),
-  recentIds: JSON.parse(localStorage.getItem('sat_recent') || '[]'),
-  recentVocab: JSON.parse(localStorage.getItem('sat_recent_vocab') || '[]')
+  history: JSON.parse(localStorage.getItem('act_history') || '{"correct":0,"wrong":0,"byTopic":{}}'),
+  progress: JSON.parse(localStorage.getItem('act_progress') || '{"quizzesTaken":0,"totalCorrect":0,"totalWrong":0}'),
+  recentIds: JSON.parse(localStorage.getItem('act_recent') || '[]'),
+  recentVocab: JSON.parse(localStorage.getItem('act_recent_vocab') || '[]')
 };
 
 function saveProgress() {
-  localStorage.setItem('sat_history', JSON.stringify(state.history));
-  localStorage.setItem('sat_progress', JSON.stringify(state.progress));
-  localStorage.setItem('sat_recent', JSON.stringify(state.recentIds));
-  localStorage.setItem('sat_recent_vocab', JSON.stringify(state.recentVocab));
+  localStorage.setItem('act_history', JSON.stringify(state.history));
+  localStorage.setItem('act_progress', JSON.stringify(state.progress));
+  localStorage.setItem('act_recent', JSON.stringify(state.recentIds));
+  localStorage.setItem('act_recent_vocab', JSON.stringify(state.recentVocab));
 }
 
 function shuffle(arr) {
@@ -1289,22 +1597,34 @@ function shuffle(arr) {
 }
 
 function pickQuestions(n) {
+  // ACT has 4 sections — split the daily quiz evenly across English, Math, Reading, Science
+  const topics = ["English", "Math", "Reading", "Science"];
   const weak = Object.entries(state.history.byTopic)
     .filter(([,v]) => v.wrong > 0 && v.correct / (v.correct + v.wrong) < 0.65)
     .map(([k]) => k);
 
-  // Exclude last 28 questions seen (4 sessions worth)
-  const recent = new Set(state.recentIds.slice(-28));
-  let pool = ALL_QUESTIONS.filter(q => !recent.has(q.id));
-  if (pool.length < n) pool = [...ALL_QUESTIONS];
+  // Exclude recently seen questions (10 sessions worth, scaled to pool size)
+  const recent = new Set(state.recentIds.slice(-80));
 
-  // Boost weak subtopics
-  const weakPool = shuffle(pool.filter(q => weak.includes(q.sub)));
-  const otherPool = shuffle(pool.filter(q => !weak.includes(q.sub)));
-  const combined = [...weakPool, ...otherPool];
-  const selected = combined.slice(0, n);
+  const base = Math.floor(n / topics.length);
+  let extra = n - base * topics.length;
 
-  state.recentIds = [...state.recentIds, ...selected.map(q => q.id)].slice(-56);
+  let selected = [];
+  topics.forEach(t => {
+    const count = base + (extra > 0 ? 1 : 0);
+    if (extra > 0) extra--;
+
+    let pool = ALL_QUESTIONS.filter(q => q.topic === t && !recent.has(q.id));
+    if (pool.length < count) pool = ALL_QUESTIONS.filter(q => q.topic === t);
+
+    const weakPool = shuffle(pool.filter(q => weak.includes(q.sub)));
+    const otherPool = shuffle(pool.filter(q => !weak.includes(q.sub)));
+    const combined = [...weakPool, ...otherPool];
+    selected = selected.concat(combined.slice(0, count));
+  });
+
+  selected = shuffle(selected);
+  state.recentIds = [...state.recentIds, ...selected.map(q => q.id)].slice(-120);
   return selected;
 }
 
@@ -1320,7 +1640,7 @@ function pickVocab(n) {
 
 function init() {
   document.getElementById('date-line').textContent = new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
-  state.quiz.qs = pickQuestions(7);
+  state.quiz.qs = pickQuestions(8);
   state.fc.cards = pickVocab(5);
   render();
 }
@@ -1417,7 +1737,7 @@ function renderFlashcards() {
   const flipped = state.fc.flipped;
   document.getElementById('root').innerHTML = `
     <div class="card">
-      <div class="section-title">Vocab Flashcards — 5 words</div>
+      <div class="section-title">Bonus Round — Vocab (optional, not ACT-scored)</div>
       <div class="fc-wrap" onclick="fcFlip()">
         <div class="fc-inner ${flipped ? 'flipped' : ''}">
           <div class="fc-face fc-front">
@@ -1436,13 +1756,15 @@ function renderFlashcards() {
         <span class="fc-counter">${idx + 1} of ${cards.length}</span>
         <button class="btn" onclick="fcNext()" ${idx === cards.length - 1 ? 'disabled' : ''}>→</button>
       </div>
-      ${idx === cards.length - 1
-        ? `<div style="text-align:center;margin-top:1rem">
-             <button class="btn btn-primary" onclick="state.phase='done';render()">View my progress →</button>
-           </div>`
-        : ''}
+      <div style="text-align:center;margin-top:1rem">
+        ${idx === cards.length - 1
+          ? `<button class="btn btn-primary" onclick="state.phase='done';render()">View my progress →</button>`
+          : `<button class="btn" onclick="skipBonus()" style="font-size:13px;color:#888;border:none;background:none">Skip bonus round →</button>`}
+      </div>
     </div>`;
 }
+
+function skipBonus() { state.phase = 'done'; render(); }
 
 function fcFlip() { state.fc.flipped = !state.fc.flipped; render(); }
 function fcNext() { if (state.fc.idx < state.fc.cards.length - 1) { state.fc.idx++; state.fc.flipped = false; render(); } }
